@@ -22,6 +22,5 @@ sudo dnf -y update && \
     net-tools \ # optional
     nano # optional
 
-
 echo 'Install PostgreSQL13-Server Module'
 yum module install postgresql:13/server
