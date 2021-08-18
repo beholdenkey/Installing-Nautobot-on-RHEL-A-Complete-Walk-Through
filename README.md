@@ -4,6 +4,6 @@ This is meant to assist users in installing Nautobot on Red Hat Enterprise Linux
 
 >Note: As of right now this guide will not go through installing Nautobot on a disconnected environment.
 
-## Pre-requisites:
+Pre-requisites:
 
-Minimum VM Resource Requirements:  
+Minimum VM Resource Requirements:
