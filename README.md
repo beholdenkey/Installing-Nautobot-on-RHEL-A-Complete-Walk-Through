@@ -7,3 +7,4 @@ This is meant to assist users in installing Nautobot on Red Hat Enterprise Linux
 Pre-requisites:
 
 Minimum VM Resource Requirements:
+>Note: These are the minimum requirements these are not the recommended requirements for a production environment.
