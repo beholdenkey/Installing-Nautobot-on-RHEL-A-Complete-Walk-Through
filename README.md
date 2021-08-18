@@ -1,4 +1,3 @@
 # Installing Nautobot on Red Hat Enterprise Linux - A Complete Walk Through
 
-source:
-<https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/8/html/deploying_different_types_of_servers/using-databases#introduction-to-postgresql_using>-**postgresql**
+This is meant to assist users in installing Nautobot on Red Hat Enterprise Linux. I will go through the process of installation, hardening, and STIG implementation. This will be all done on a Virtual Machine. In addition, I will be using the ansible-playbook for the RHEL 8 STIG implementation. Please refer to the resources directory for the links to these repositories.
