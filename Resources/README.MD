@@ -5,6 +5,7 @@ Nautobot Documentation - <https://nautobot.readthedocs.io/en/stable/>
 Nautobot Github Repository - <https://github.com/nautobot/nautobot>
 
 Installing Nautobot - A Complete Walk-through - May 6 2021 - <https://blog.networktocode.com/post/installing-nautobot/>
+>Note: This walk-through is for Ubuntu, there are also some rather big changes that have been made to the overall code source since this Walk-through was made.
 
 Red Hat PostgreSQL Installation - <https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/8/html/deploying_different_types_of_servers/using-databases#introduction-to-postgresql_using>
 
