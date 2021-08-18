@@ -18,4 +18,10 @@ sudo dnf -y update && \
     python39 \
     python39-devel \
     python39-pip \
-    redis
+    redis \
+    net-tools \ # optional
+    nano # optional
+
+
+echo 'Install PostgreSQL13-Server Module'
+yum module install postgresql:13/server
