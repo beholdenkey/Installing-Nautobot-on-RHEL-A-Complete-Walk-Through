@@ -23,4 +23,7 @@ sudo dnf -y update && \
     nano # optional
 
 echo 'Install PostgreSQL13-Server Module'
-yum module install postgresql:13/server
+dnf module install postgresql:13/server
+
+echo 'Initializing Database'
+postgresql-setup --initdb
