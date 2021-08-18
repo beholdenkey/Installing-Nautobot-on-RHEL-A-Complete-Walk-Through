@@ -6,6 +6,10 @@ This is meant to assist users in installing Nautobot on Red Hat Enterprise Linux
 
 Also, if you are not familiar with the dependencies of Nautobot, I highly recommend that you do some reading because nautobot consists of a rather diverse Application Stack.
 
+Future Plans:
+
+- Create Playbook with vars that support installation an configuration of either server installation and or container installation.
+
 ## Pre-requisites
 
 Minimum VM Resource Requirements:
