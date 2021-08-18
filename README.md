@@ -11,8 +11,8 @@ Also, if you are not familiar with the dependencies of Nautobot, I highly recomm
 Minimum VM Resource Requirements:
 >Note: These are the minimum requirements these are not the recommended requirements for a production environment.
 
-vCores - 4
-Memory - 8 GiB
-Storage - 125 GiB
+- vCores - 4
+- Memory - 8 GiB
+- Storage - 125 GiB
 
 >Note: Keep in mind that we will be applying the RHEL 8 STIG and this will require additional resources for the increased storage requirements.
