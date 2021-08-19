@@ -20,6 +20,8 @@ sudo dnf -y update && \
     redis \
 #    net-tools \ # optional
 #    nano # optional
+
+echo 'Installing Ansible'
 pip3 install ansible
 
 echo 'Exposing port 443'
