@@ -19,4 +19,25 @@ Minimum VM Resource Requirements:
 - Memory - 8 GiB
 - Storage - 125 GiB
 
+Nautobot has the following minimum version requirements for its dependencies:
+
+- Python: 3.6
+- PostgreSQL: 9.6
+- Redis: 4.0
+
+Dependency versions I have successfully used on production Nautobot Server:
+
+- Python: 3.9.6
+- PostgreSQL: 13.4
+- Redis 5.2
+
+>Note if you are not using the latest version of python and would like to install the latest version from source please go to the following link <https://github.com/beholdenkey/Installing-Nautobot-on-RHEL-A-Complete-Walk-Through/blob/main/Resources/python_install.sh> However you can also install latest python available for that OS through the following commands
+
+```bash
+dnf -y install \
+    python39 \
+    python39-devel \
+    python39-pip
+```
+
 >Note: Keep in mind that we will be applying the RHEL 8 STIG and this will require additional resources for the increased storage requirements.
