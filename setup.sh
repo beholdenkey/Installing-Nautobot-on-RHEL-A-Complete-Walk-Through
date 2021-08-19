@@ -20,6 +20,7 @@ sudo dnf -y update && \
     redis \
 #    net-tools \ # optional
 #    nano # optional
+pip3 install ansible
 
 echo 'Exposing port 443'
 firewall-cmd --permanent --add-port=443/tcp
