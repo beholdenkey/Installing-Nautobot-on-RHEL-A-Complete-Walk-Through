@@ -19,11 +19,21 @@ sudo dnf -y update && \
     python39-devel \
     python39-pip \
     redis \
-    net-tools \ # optional
-    nano # optional
+#    net-tools \ # optional
+#    nano # optional
+
+echo 'Exposing port 443'
+firewall-cmd --permanent --add-port=443/tcp
+echo 'Reloading firewall'
+firewall-cmd --reload
+
+# SELinux may be preventing the reverse proxy connection. You may need to allow HTTP network connections with the command setsebool -P httpd_can_network_connect 1. For further information, view the SELinux troubleshooting guide.
+echo 'Adding SELinux Rule to Allow HTTP network connections through Reverse Proxy'
+setsebool -P httpd_can_network_connect 1
 
 echo 'Install PostgreSQL13-Server Module'
 dnf module install postgresql:13/server
 
 echo 'Initializing Database'
 postgresql-setup --initdb
+
