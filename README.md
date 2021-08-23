@@ -57,3 +57,49 @@ chmod +x setup.sh
 ```
 
 >Note: It is crucial that you review the setup.sh file before execution this is not one of those scripts that will do everything for you.
+
+Step 2:
+
+Create the database
+>Note: This process will not go into setting up anything more than the bare minimum required database to support the Nautobot application. In the future I wil add documentation and instructions supporting my stream replication as well as load balancing support.
+
+```bash
+sudo -u postgres psql
+```
+
+>Note: These passwords are not secure and it is highly recommended that you set the password for the postgres role because if the password is not set there is essentially nothing stop someone from making changes if they are able to access the server.
+
+```SQL
+postgres=# CREATE DATABASE nautobot;
+```
+
+```SQL
+postgres=# CREATE USER nautobot WITH PASSWORD 'insecure_password';
+```
+
+```SQL
+postgres=# GRANT ALL PRIVILEGES ON DATABASE nautobot TO nautobot;
+```
+
+``SQL
+postgres=# \q
+```
+
+Verify the Service Status
+
+You can verify that authentication works issuing the following command and providing the configured password. (Replace localhost with your database server if using a remote database.)
+
+If successful, you will enter a nautobot prompt. Type \conninfo to confirm your connection, or type \q to exit.
+
+>Now that you have exited you will need to go back in as the Nautobot Role and Connect to the Nautobot Database both of which you just created previously.
+
+```SQL
+psql --username nautobot --password --host localhost nautobot
+```
+
+```SQL
+nautobot=> \conninfo
+You are connected to database "nautobot" as user "nautobot" on host "localhost" (address "127.0.0.1") at port "5432".
+```
+
+By default these setting are sufficient because this database all need to be accessed locally by the Nautobot application.
