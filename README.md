@@ -120,3 +120,57 @@ PONG
 
 >Note: This is sufficient when it comes to configuring redis
 
+Step 4: Create the Nautobot System User
+
+Create a system user account named nautobot. This user will own all of the Nautobot files, and the Nautobot web services will be configured to run under this account.
+
+The following command also creates the /opt/nautobot directory and sets it as the home directory for the user.
+
+```bash
+sudo useradd --system --shell /bin/bash --create-home --home-dir /opt/nautobot nautobot
+```
+
+Step 5: Setup Virtual Environment
+
+A Python virtual environment or virtualenv is like a container for a set of Python packages. A virtualenv allows you to build environments suited to specific projects without interfering with system packages or other projects.
+
+When installed per the documentation, Nautobot uses a virtual environment in production.
+
+In the following steps, we will have you create the virtualenv within the NAUTOBOT_ROOT you chose in the previous step. This is the same we had you set as the home directory as the nautobot user.
+
+>Note: Instead of deliberately requiring you to activate/deactivate the virtualenv, we are emphasizing on relying on the $PATH to access programs installed within it. We find this to be much more intuitive and natural when working with Nautobot in this way.
+
+As root, we're going to create the virtualenv in our NAUTOBOT_ROOT as the nautobot user to populate the /opt/nautobot directory with a self-contained Python environment including a bin directory for scripts and a lib directory for Python libaries.
+
+```bash
+sudo -u nautobot python3 -m venv /opt/nautobot
+```
+
+Update the Nautobot .bashrc
+
+```bash
+echo "export NAUTOBOT_ROOT=/opt/nautobot" | sudo tee -a ~nautobot/.bashrc
+```
+
+>Note: It is critical to install Nautobot as the nautobot user so that we don't have to worry about fixing permissions later.
+
+```bash
+sudo -iu nautobot
+```
+
+>Note: Unless explicitly stated, all remaining steps requiring the use of pip3 or nautobot-server in this document should be performed as the nautobot user!
+
+```python
+pip3 install --upgrade pip wheel
+```
+
+```python
+pip3 install nautobot
+```
+
+Confirm Nautobot Installation and Version
+>Note: You should now have a fancy nautobot-server command in your environment. This will be your gateway to all things Nautobot! Run it to confirm the installed version of nautobot:
+
+```python
+nautobot-server --version
+```
