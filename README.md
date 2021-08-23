@@ -81,7 +81,7 @@ postgres=# CREATE USER nautobot WITH PASSWORD 'insecure_password';
 postgres=# GRANT ALL PRIVILEGES ON DATABASE nautobot TO nautobot;
 ```
 
-``SQL
+```SQL
 postgres=# \q
 ```
 
