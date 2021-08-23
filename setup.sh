@@ -49,3 +49,6 @@ echo 'Copying pg_hba.conf to /var/lib/pgsql/data/pg_hba.conf'
 echo 'Copying postgresql.conf to /var/lib/pgsql/data/postgresql.conf'
 
 # Place Holder
+
+echo 'Enable Postgresql Service'
+systemctl enable --now postgresql
