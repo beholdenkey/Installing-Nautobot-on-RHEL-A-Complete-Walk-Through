@@ -52,3 +52,4 @@ echo 'Copying postgresql.conf to /var/lib/pgsql/data/postgresql.conf'
 
 echo 'Enable Postgresql Service'
 systemctl enable --now postgresql
+
