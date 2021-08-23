@@ -41,3 +41,21 @@ dnf -y install \
 ```
 
 >Note: Keep in mind that we will be applying the RHEL 8 STIG and this will require additional resources for the increased storage requirements.
+
+Step 1:
+
+Clone this repository
+
+```bash
+git clone https://github.com/beholdenkey/Installing-Nautobot-on-RHEL-A-Complete-Walk-Through.git
+```
+
+```bash
+chmod +x setup.sh
+```
+
+```bash
+./setup.sh
+```
+
+>Note: It is crucial that you review the setup.sh file before execution this is not one of those scripts that will do everything for you.
