@@ -44,8 +44,6 @@ dnf -y install \
 
 Step 1:
 
-Clone this repository
-
 ```bash
 git clone https://github.com/beholdenkey/Installing-Nautobot-on-RHEL-A-Complete-Walk-Through.git
 ```
