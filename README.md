@@ -103,3 +103,20 @@ You are connected to database "nautobot" as user "nautobot" on host "localhost" 
 ```
 
 By default these setting are sufficient because this database all need to be accessed locally by the Nautobot application.
+
+Step 3:
+
+```bash
+systemctl enable --now redis
+```
+
+```bash
+redis-cli ping
+```
+
+```redis
+PONG
+```
+
+>Note: This is sufficient when it comes to configuring redis
+
