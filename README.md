@@ -174,3 +174,17 @@ Confirm Nautobot Installation and Version
 ```python
 nautobot-server --version
 ```
+
+Step 5: Initialize your Configuration
+
+Initialize a new configuration by running nautobot-server init. You may specify an alternate location and detailed instructions for this are covered in the documentation on Nautobot Configuration.
+
+However, because we've set the NAUTOBOT_ROOT, this command will automatically create a new nautobot_config.py at the default location based on this at $NAUTOBOT_ROOT/nautobot_config.py:
+
+```python
+nautobot-server init
+```
+
+```bash
+Configuration file created at '/opt/nautobot/nautobot_config.py'
+```
