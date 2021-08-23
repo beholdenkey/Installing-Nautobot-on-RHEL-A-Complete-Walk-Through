@@ -39,3 +39,13 @@ dnf module install postgresql:13/server
 echo 'Initializing Database'
 postgresql-setup --initdb
 
+# Be Sure to go to the \Installing-Nautobot-on-RHEL---A-Complete-Walk-Through\Resources\PostgreSQL\Templates and modify the templates how you see fit.
+# If you make any changes to the file paths be sure to alter the script accordingly.
+
+echo 'Copying pg_hba.conf to /var/lib/pgsql/data/pg_hba.conf'
+
+# Place Holder
+
+echo 'Copying postgresql.conf to /var/lib/pgsql/data/postgresql.conf'
+
+# Place Holder
