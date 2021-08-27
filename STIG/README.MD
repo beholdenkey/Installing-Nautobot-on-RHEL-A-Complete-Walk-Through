@@ -2,6 +2,13 @@
 
 The Security Technical Implementation Guide (STIG) for RHEL 8 will be implemented using the RHEL 8 STIG ansible playbook.
 
+PLEASE READ:
+
+- How long will it take to execute this playbook?
+  - It will take 20-30 minutes to execute this playbook.
+- What will this playbook not do?
+  - This playbook will not partition the drives in the required manner. The engineer must do this in the initial build phase.
+
 >Note: If there are any issues with this playbook please submit the issue to <https://github.com/RedHatGov/rhel8-stig-latest>.
 
 Resources:

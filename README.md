@@ -9,6 +9,7 @@ Also, if you are not familiar with the dependencies of Nautobot, I highly recomm
 Future Plans:
 
 - Create Playbook with vars that support installation an configuration of either server installation and or container installation.
+- Add Partition ratios for STIG preparation.
 
 ## Pre-requisites
 
