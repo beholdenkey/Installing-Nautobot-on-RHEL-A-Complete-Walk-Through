@@ -20,3 +20,7 @@ Celery Documentation - <https://docs.celeryproject.org/en/stable/>
 NGINX Reverse Proxy - <https://docs.nginx.com/nginx/admin-guide/web-server/reverse-proxy/>
 
 OpenSSL - <https://www.openssl.org/>
+
+Red Hat Official RHEL8_STIG: <https://galaxy.ansible.com/redhatofficial/rhel8_stig>
+
+Red Hat Gov Playbook: <https://github.com/RedHatGov/rhel8-stig-latest>
