@@ -68,7 +68,13 @@ systemctl stop nautobot-worker \
 systemctl stop nginx
 ```
 
->Note: After the STIG playbook has completed you will then start all of these services and check them for functionality. 
+Now you can execute the playbook
+
+```bash
+ansible-playbook /etc/ansible/playbooks/rhel8-stig-latest/rhel8-playbook-stig.yml
+```
+
+>Note: After the STIG playbook has completed you will then start all of these services and check them for functionality.
 
 ```bash
 systemctl start redis && \
