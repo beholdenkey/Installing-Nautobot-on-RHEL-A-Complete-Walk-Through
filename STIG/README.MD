@@ -88,7 +88,7 @@ systemctl start redis && \
 systemctl start postgresql && \
 systemctl start nautobot && \
 systemctl start nautobot-worker && \
-systemctl stat nginx
+systemctl start nginx
 ```
 
 Now that they are start you will need to verify there status.
