@@ -50,8 +50,10 @@ pip3 install ansible
 ansible-galaxy install redhatofficial.rhel8_stig
 ```
 
->Note: You may want to create a folder for your playbooks, this way you can find them and remove them after you are done using them.
+```bash
+mkdir /etc/ansible/playbooks
+```
 
 ```bash
-git clone https://github.com/RedHatGov/rhel8-stig-latest
+git clone https://github.com/RedHatGov/rhel8-stig-latest /etc/ansible/playbooks
 ```
