@@ -26,6 +26,7 @@ pip3 install ansible
 
 echo 'Exposing port 443'
 firewall-cmd --permanent --add-port=443/tcp
+firewall-cmd --permanent --add-port=80/tcp
 echo 'Reloading firewall'
 firewall-cmd --reload
 
