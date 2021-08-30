@@ -17,9 +17,9 @@ sudo dnf -y update && \
     python39 \
     python39-devel \
     python39-pip \
-    redis \
+    redis # \
 #    net-tools \ # optional
-#    nano # optional
+#    nano \ # optional
 
 echo 'Installing Ansible'
 pip3 install wheel
