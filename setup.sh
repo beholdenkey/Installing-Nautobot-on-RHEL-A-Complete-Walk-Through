@@ -95,6 +95,12 @@ echo nautobot_netbox_importer >> $NAUTOBOT_ROOT/local_requirements.txt
 echo nautobot_plugin_nornir >> $NAUTOBOT_ROOT/local_requirements.txt
 echo nautobot_golden_config >> $NAUTOBOT_ROOT/local_requirements.txt
 
+nautobot-server migrate
+
+nautobot-server createsuperuser
+
+nautobot-server collectstatic
+
 echo 'Obtain an SSL Certificate'
 sudo openssl req -x509 -nodes -days 365 -newkey rsa:4096 \
   -keyout /etc/pki/tls/private/nautobot.key \
