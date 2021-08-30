@@ -54,6 +54,20 @@ echo 'Copying postgresql.conf to /var/lib/pgsql/data/postgresql.conf'
 echo 'Enable Postgresql Service'
 systemctl enable --now postgresql
 
+echo 'Enable Redis'
+sudo systemctl enable --now redis
+
+
+echo 'Create a system user account named nautobot. This user will own all of the Nautobot files, and the Nautobot web services will be configured to run under this account.
+The following command also creates the /opt/nautobot directory and sets it as the home directory for the user.'
+sudo useradd --system --shell /bin/bash --create-home --home-dir /opt/nautobot nautobot
+
+echo 'Create the Virtual Environment'
+sudo -u nautobot python3 -m venv /opt/nautobot
+
+echo "export NAUTOBOT_ROOT=/opt/nautobot" | sudo tee -a ~nautobot/.bashrc
+
+sudo -iu nautobot
 echo 'Obtain an SSL Certificate'
 sudo openssl req -x509 -nodes -days 365 -newkey rsa:4096 \
   -keyout /etc/pki/tls/private/nautobot.key \
