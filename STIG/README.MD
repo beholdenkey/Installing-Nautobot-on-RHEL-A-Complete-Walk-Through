@@ -68,11 +68,7 @@ git clone https://github.com/RedHatGov/rhel8-stig-latest /etc/ansible/playbooks
 Now that all of the staging and prerequisites have been taken care of and you have performed your checks we can not stop the services running the server. In the case of Nautobot we will be performing the following.
 
 ```bash
-systemctl stop redis postgresql nautobot nautobot-worker nginx
-systemctl stop postgresql && \
-systemctl stop nautobot && \
-systemctl stop nautobot-worker \
-systemctl stop nginx
+systemctl disable redis postgresql nautobot nautobot-worker nginx
 ```
 
 Now you can execute the playbook
@@ -84,11 +80,7 @@ ansible-playbook /etc/ansible/playbooks/rhel8-stig-latest/rhel8-playbook-stig.ym
 >Note: After the STIG playbook has completed you will then start all of these services and check them for functionality.
 
 ```bash
-systemctl start redis && \
-systemctl start postgresql && \
-systemctl start nautobot && \
-systemctl start nautobot-worker && \
-systemctl start nginx
+systemctl enable --now redis postgresql nautobot nautobot-worker nginx
 ```
 
 Now that they are restarted you will need to verify there status.
