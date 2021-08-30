@@ -91,7 +91,7 @@ systemctl start nautobot-worker && \
 systemctl start nginx
 ```
 
-Now that they are start you will need to verify there status.
+Now that they are restarted you will need to verify there status.
 
 ```bash
 systemctl status (Service_Name)
