@@ -86,7 +86,7 @@ systemctl enable --now redis postgresql nautobot nautobot-worker nginx
 Now that they are restarted you will need to verify there status.
 
 ```bash
-systemctl status (Service_Name)
+systemctl is-active redis postgresql nautobot nautobot-worker nginx
 ```
 
 After functionality of all services and dependencies has been confirmed you can then proceed to go attempt to access the Nautobot instance.
