@@ -108,3 +108,9 @@ sudo openssl req -x509 -nodes -days 365 -newkey rsa:4096 \
 
 echo 'Install Nginx'
 dnf -y install Nginx
+
+echo 'Copy Nautobot.conf to /etc/nginx/conf.d'
+
+#PLACE HOLDER
+
+sudo sed -i 's@ default_server@@' /etc/nginx/nginx.conf
