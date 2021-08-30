@@ -58,6 +58,8 @@ systemctl enable --now postgresql
 echo 'Enable Redis'
 sudo systemctl enable --now redis
 
+echo 'Test Redis'
+redis-cli ping
 
 echo 'Create a system user account named nautobot. This user will own all of the Nautobot files, and the Nautobot web services will be configured to run under this account.
 The following command also creates the /opt/nautobot directory and sets it as the home directory for the user.'
