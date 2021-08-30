@@ -11,6 +11,8 @@ Future Plans:
 - Create Playbook with vars that support installation an configuration of either server installation and or container installation.
 - Add Partition ratios for STIG preparation.
 
+The Configuration directory will contain recommended conf files. However I highly recommend you validate that these configurations work for your environment.
+
 ## Pre-requisites
 
 Minimum VM Resource Requirements:
@@ -141,7 +143,7 @@ In the following steps, we will have you create the virtualenv within the NAUTOB
 
 >Note: Instead of deliberately requiring you to activate/deactivate the virtualenv, we are emphasizing on relying on the $PATH to access programs installed within it. We find this to be much more intuitive and natural when working with Nautobot in this way.
 
-As root, we're going to create the virtualenv in our NAUTOBOT_ROOT as the nautobot user to populate the /opt/nautobot directory with a self-contained Python environment including a bin directory for scripts and a lib directory for Python libaries.
+As root, we're going to create the virtualenv in our NAUTOBOT_ROOT as the nautobot user to populate the /opt/nautobot directory with a self-contained Python environment including a bin directory for scripts and a lib directory for Python libraries.
 
 ```bash
 sudo -u nautobot python3 -m venv /opt/nautobot
@@ -190,15 +192,20 @@ nautobot-server init
 Configuration file created at '/opt/nautobot/nautobot_config.py'
 ```
 
-
 Required Settings
 
 Your nautobot_config.py provides sane defaults for all of the configuration settings. You will inevitably need to update the settings for your environment, most notably the DATABASES setting. If you do not wish to modify the config, by default, many of these configuration settings can also be specified by environment variables. Please see Required Settings for further details.
 
 Edit $NAUTOBOT_ROOT/nautobot_config.py, and head over to the documentation on Required Settings to tweak your required settings. At a minimum, you'll need to update the following settings:
 
-    ALLOWED_HOSTS: You must set this value. This can be set to ["*"] for a quick start, but this value is not suitable for production deployment.
+- ALLOWED_HOSTS: You must set this value. This can be set to ["*"] for a quick start, but this value is not suitable for production deployment.
     DATABASES: Database connection parameters. If you installed your database server on the same system as Nautobot, you'll need to update the USER and PASSWORD fields here. If you are using MySQL, you'll also need to update the ENGINE field, changing the default database driver suffix from django.db.backends.postgresql to django.db.backends.mysql.
     Redis settings: Redis configuration requires multiple settings including CACHEOPS_REDIS and RQ_QUEUES, if different from the defaults. If you installed Redis on the same system as Nautobot, you do not need to change these settings.
 
 You can also create a template for you organizations Nautobot and that way you can just copy the file over to the server now and in the future.
+
+Install Local Requirements:
+
+```bash
+pip3 install -r $NAUTOBOT_ROOT/local_requirements.txt
+```
