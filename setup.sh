@@ -36,7 +36,7 @@ echo 'Adding SELinux Rule to Allow HTTP network connections through Reverse Prox
 setsebool -P httpd_can_network_connect 1
 
 echo 'Install PostgreSQL13-Server Module'
-dnf module install postgresql:13/server
+dnf -y module install postgresql:13/server
 
 echo 'Initializing Database'
 postgresql-setup --initdb
@@ -77,6 +77,23 @@ pip3 install --upgrade pip wheel
 
 echo 'Install Nautobot Python Package'
 pip3 install nautobot
+
+echo 'Server Init'
+nautobot-server init
+
+
+pip3 install nautobot_data_validation_engine nautobot_netbox_importer nautobot_plugin_nornir nautobot_golden_config
+
+cd /opt/nautobot
+
+touch local_requirements.txt
+
+pip3 install -r $NAUTOBOT_ROOT/local_requirements.txt
+
+echo nautobot_data_validation_engine >> $NAUTOBOT_ROOT/local_requirements.txt
+echo nautobot_netbox_importer >> $NAUTOBOT_ROOT/local_requirements.txt
+echo nautobot_plugin_nornir >> $NAUTOBOT_ROOT/local_requirements.txt
+echo nautobot_golden_config >> $NAUTOBOT_ROOT/local_requirements.txt
 
 echo 'Obtain an SSL Certificate'
 sudo openssl req -x509 -nodes -days 365 -newkey rsa:4096 \
