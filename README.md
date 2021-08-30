@@ -11,6 +11,8 @@ Future Plans:
 - Create Playbook with vars that support installation an configuration of either server installation and or container installation.
 - Add Partition ratios for STIG preparation.
 
+The Configuration directory will contain recommended conf files. However I highly recommend you validate that these configurations work for your environment.
+
 ## Pre-requisites
 
 Minimum VM Resource Requirements:
