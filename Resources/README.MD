@@ -1,7 +1,7 @@
 # Resources
 
 Nautobot Documentation - <https://nautobot.readthedocs.io/en/stable/>
->Note: There have been siginficant improvements to the documentation on Nautobot. For most this documentation will be suffucient, where as this documentation will grow and become more complex over time. I highly reccomend start with there documentation first.
+>Note: There have been siginficant improvements to the documentation on Nautobot. For most this documentation will be suffucient, where as this documentation will grow and become more complex over time. I highly reccomend starting with there documentation first.
 
 Nautobot Github Repository - <https://github.com/nautobot/nautobot>
 
