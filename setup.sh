@@ -68,6 +68,13 @@ sudo -u nautobot python3 -m venv /opt/nautobot
 echo "export NAUTOBOT_ROOT=/opt/nautobot" | sudo tee -a ~nautobot/.bashrc
 
 sudo -iu nautobot
+
+echo 'Python Wheel Package'
+pip3 install --upgrade pip wheel
+
+echo 'Install Nautobot Python Package'
+pip3 install nautobot
+
 echo 'Obtain an SSL Certificate'
 sudo openssl req -x509 -nodes -days 365 -newkey rsa:4096 \
   -keyout /etc/pki/tls/private/nautobot.key \
