@@ -36,7 +36,7 @@ mkdir /etc/ansible
 cd /etc/ansible
 ```
 
->Note: You will still need to add everything to the ansible.cfg the best way to do this is either to git clone this repo or if you are able then copy and paste 
+>Note: You will still need to add everything to the ansible.cfg the best way to do this is either to git clone this repo or if you are able then copy and paste
 from this repo. (It cannot be left blank)
 
 ```bash
@@ -65,7 +65,7 @@ mkdir /etc/ansible/playbooks
 git clone https://github.com/RedHatGov/rhel8-stig-latest /etc/ansible/playbooks
 ```
 
-Now that all of the staging and prerequisites have been taken care of and you have performed your checks we can not stop the services running the server. In the case of Nautobot we will be performing the following. 
+Now that all of the staging and prerequisites have been taken care of and you have performed your checks we can not stop the services running the server. In the case of Nautobot we will be performing the following.
 
 ```bash
 systemctl stop redis postgresql nautobot nautobot-worker nginx
