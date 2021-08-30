@@ -22,6 +22,7 @@ sudo dnf -y update && \
 #    nano # optional
 
 echo 'Installing Ansible'
+pip3 install wheel
 pip3 install ansible
 
 echo 'Exposing port 443'
