@@ -8,7 +8,7 @@
 # Leave the Host Name as the default (localhost.localdomain) this can be changed as needed later.
 # It is important to remember that you need to remove all Network Configurations prior to exporting as an OVA
 # The DISA STIG for Red Hat Enterprise LInux - Will be applied so be sure to correctly partition the storage
-# Note this script is still a work in progress
+# Note this script is still a work in progress.
 echo 'Updating OS and Installing System Packages'
 
 sudo dnf -y update && \
