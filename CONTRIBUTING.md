@@ -31,7 +31,7 @@ Some great guidelines can be found [here](https://wiki.openstack.org/wiki/GitCom
 [here](http://robots.thoughtbot.com/5-useful-tips-for-a-better-commit-message).
 
 ## Changelog
- 
+
 Changelog is generateg automatically on every merged Pull Request and all information is taken from github issues, PRs
 and labels.
 
@@ -40,7 +40,7 @@ and labels.
 ### Keep it simple
 
 We try to provide production ready ansible roles which should be as much zero-conf as possible but this doesn't mean to
-overcomplicate things. Just follow [KISS](https://en.wikipedia.org/wiki/KISS_principle).
+overcomplicated things. Just follow [KISS](https://en.wikipedia.org/wiki/KISS_principle).
 
 ### Be explicit
 
@@ -49,18 +49,18 @@ overcomplicate things. Just follow [KISS](https://en.wikipedia.org/wiki/KISS_pri
 * In case of failures, communicate what happened and why a failure occurs to the user. Make it easy to track the code
 or action that produced the error. Try to catch and handle errors if possible to provide improved failure messages.
 
-
 ### Add tests
 
 We are striving to use at least two test scenarios located in [/molecule](molecule) directory. First one
-([default](molecule/default)) is testing default configuration without any additional variables, second one 
-([alternative](molecule/alternative)) is testing what happens when many variables from 
+([default](molecule/default)) is testing default configuration without any additional variables, second one
+([alternative](molecule/alternative)) is testing what happens when many variables from
 [/defaults/main.yml](defaults/main.yml) are changed. When adding new functionalities please add tests to proper
 scenarios. Tests are written in testinfra framework and are located in `/tests` subdirectory of scenario directory
 (for example default tests are in [/molecule/default/tests](molecule/default/tests)).
 More information about:
-  - [testinfra](http://testinfra.readthedocs.io/en/latest/index.html)
-  - [molecule](https://molecule.readthedocs.io/en/latest/index.html)
+
+* [testinfra](http://testinfra.readthedocs.io/en/latest/index.html)
+* [molecule](https://molecule.readthedocs.io/en/latest/index.html)
 
 ### Follow best practices
 
@@ -76,11 +76,11 @@ Remember: Code is generally read much more often than written.
 
 Wherever possible, please refrain from any other formats and stick to simple markdown.
 
-## Requirements regarding roles design 
+## Requirements regarding roles design
 
 We are trying to create the best and most secure installation method for non-containerized prometheus stack components.
 To accomplish this all roles need to support:
 
-- current and at least one previous ansible version (wherever possible we try to support 2 previous ansible versions)
-- systemd as the only available process manager
-- at least latest debian and CentOS distributions
+* current and at least one previous ansible version (wherever possible we try to support 2 previous ansible versions)
+* systemd as the only available process manager
+* at least latest debian and CentOS distributions
