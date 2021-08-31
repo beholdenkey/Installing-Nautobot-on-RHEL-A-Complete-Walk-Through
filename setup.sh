@@ -85,10 +85,17 @@ pip3 install nautobot
 echo 'Server Init'
 nautobot-server init
 
+echo 'Copy nautobot_config file from configurations directory'
 
+# Place Holder
+
+echo 'Install Desired Plugins'
+#These are plugins I use. Feel free to remove and or comment out
 pip3 install nautobot_data_validation_engine nautobot_netbox_importer nautobot_plugin_nornir nautobot_golden_config
 
 cd /opt/nautobot
+
+echo 'Setting up Local_Requirements and saving additional python packages to Local_Requirements'
 
 touch local_requirements.txt
 
