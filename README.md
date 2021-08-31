@@ -10,6 +10,8 @@ Also, if you are not familiar with the dependencies of Nautobot, I highly recomm
 
 Future Plans:
 
+[] Complete the [setup.sh](https://github.com/beholdenkey/Installing-Nautobot-on-RHEL-A-Complete-Walk-Through/blob/d6275765266b6b4ff4e1bfcdc989ecdc7662ecf4/SECURITY.md) script.
+
 - Create Playbook with vars that support installation an configuration of either server installation and or container installation.
 - Add Partition ratios for STIG preparation.
 
