@@ -36,7 +36,7 @@ Dependency versions I have successfully used on production Nautobot Server:
 - PostgreSQL: 13.3-4
 - Redis 5.2
 
->Note if you are not using the latest version of python and would like to install the latest version from source please go to the following link <https://github.com/beholdenkey/Installing-Nautobot-on-RHEL-A-Complete-Walk-Through/blob/main/Resources/python_install.sh> However you can also install latest python available for that OS through the following commands
+>Note if you are not using the latest version of python and would like to install the latest version from source please go to the following [Python](https://github.com/beholdenkey/Installing-Nautobot-on-RHEL-A-Complete-Walk-Through/blob/main/Resources/python_install.sh) However you can also install latest python available for that OS through the following commands
 
 ```bash
 dnf -y install \
