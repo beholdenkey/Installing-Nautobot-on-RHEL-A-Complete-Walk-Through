@@ -23,3 +23,5 @@
 - [Red Hat Official RHEL8_STIG](https://galaxy.ansible.com/redhatofficial/rhel8_stig)
 
 - [Red Hat Gov Playbook](https://github.com/RedHatGov/rhel8-stig-latest)
+
+- [Python Install](https://github.com/beholdenkey/Installing-Nautobot-on-RHEL-A-Complete-Walk-Through/blob/68eca129a5192a8d603518c0692842a6819b4826/Resources/Python/python_install.sh)
