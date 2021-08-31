@@ -1,27 +1,25 @@
 # Resources
 
-[Nautobot Documentation](https://nautobot.readthedocs.io/en/stable/)
->Note: There have been significant improvements to the documentation on Nautobot. For most this documentation will be sufficient, where as this documentation will grow and become more complex over time. I highly recommend starting with there documentation first.
+- [Nautobot Documentation](https://nautobot.readthedocs.io/en/stable/)
 
-[Nautobot Github Repository](https://github.com/nautobot/nautobot)
+- [Nautobot Github Repository](https://github.com/nautobot/nautobot)
 
-[Nautobot PyPi](https://pypi.org/project/nautobot/)
+- [Nautobot PyPi](https://pypi.org/project/nautobot/)
 
-[Installing Nautobot - A Complete Walk-through - May 6 2021](https://blog.networktocode.com/post/installing-nautobot/)
->Note: This walk-through is for Ubuntu, there are also some rather big changes that have been made to the overall code source since this Walk-through was made.
+- [Installing Nautobot - A Complete Walk-through - May 6 2021](https://blog.networktocode.com/post/installing-nautobot/)
 
-Red Hat PostgreSQL Installation - <https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/8/html/deploying_different_types_of_servers/using-databases#introduction-to-postgresql_using>
+- [Red Hat PostgreSQL Installation](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/8/html/deploying_different_types_of_servers/using-databases#introduction-to-postgresql_using)
 
-Redis - <https://redis.io/>
+- [Redis](https://redis.io/>)
 
-uWSGI Documentation - <https://uwsgi-docs.readthedocs.io/en/latest/>
+- [uWSGI Documentation](https://uwsgi-docs.readthedocs.io/en/latest/)
 
-Celery Documentation - <https://docs.celeryproject.org/en/stable/>
+- [Celery Documentation](https://docs.celeryproject.org/en/stable/)
 
-NGINX Reverse Proxy - <https://docs.nginx.com/nginx/admin-guide/web-server/reverse-proxy/>
+- [NGINX Reverse Proxy](https://docs.nginx.com/nginx/admin-guide/web-server/reverse-proxy/)
 
-OpenSSL - <https://www.openssl.org/>
+- [OpenSSL](https://www.openssl.org/)
 
-Red Hat Official RHEL8_STIG: <https://galaxy.ansible.com/redhatofficial/rhel8_stig>
+- [Red Hat Official RHEL8_STIG](https://galaxy.ansible.com/redhatofficial/rhel8_stig)
 
-Red Hat Gov Playbook: <https://github.com/RedHatGov/rhel8-stig-latest>
+- [Red Hat Gov Playbook](https://github.com/RedHatGov/rhel8-stig-latest)
