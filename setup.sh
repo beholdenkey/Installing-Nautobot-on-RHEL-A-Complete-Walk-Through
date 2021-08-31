@@ -17,9 +17,8 @@ sudo dnf -y update && \
     python39 \
     python39-devel \
     python39-pip \
-    redis # \
-#    net-tools \ # optional
-#    nano \ # optional
+    redis \
+    nano
 
 echo 'Installing Ansible'
 pip3 install wheel
@@ -61,6 +60,9 @@ sudo systemctl enable --now redis
 echo 'Test Redis'
 redis-cli ping
 
+echo 'Redis Status'
+systemctl is-active redis
+
 echo 'Create a system user account named nautobot. This user will own all of the Nautobot files, and the Nautobot web services will be configured to run under this account.
 The following command also creates the /opt/nautobot directory and sets it as the home directory for the user.'
 sudo useradd --system --shell /bin/bash --create-home --home-dir /opt/nautobot nautobot
@@ -70,6 +72,8 @@ sudo -u nautobot python3 -m venv /opt/nautobot
 
 echo "export NAUTOBOT_ROOT=/opt/nautobot" | sudo tee -a ~nautobot/.bashrc
 
+echo 'Changing to Nautobot User'
+#These following commands must be executed as the nautobot user
 sudo -iu nautobot
 
 echo 'Python Wheel Package'
