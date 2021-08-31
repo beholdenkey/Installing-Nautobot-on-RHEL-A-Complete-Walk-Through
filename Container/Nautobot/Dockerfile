@@ -1,8 +1,4 @@
 FROM registry.redhat.io/ubi8/ubi
-<<<<<<< HEAD
-=======
-
->>>>>>> 4ff8e8c6b3b04149ccbf293eee7d05c8cf80a5a2
 USER root
 RUN yum install wget unzip -y
 # COPY /repos/yum.repos.d/ /etc/yum.repos.d/
