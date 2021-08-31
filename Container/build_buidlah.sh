@@ -1,0 +1,1 @@
+sudo buildah bud -f Dockerfile-Nautobot -t nautobot:latest --tls-verify=false
