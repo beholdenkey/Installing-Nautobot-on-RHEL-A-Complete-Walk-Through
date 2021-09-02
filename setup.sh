@@ -117,6 +117,60 @@ sudo openssl req -x509 -nodes -days 365 -newkey rsa:4096 \
   -keyout /etc/pki/tls/private/nautobot.key \
   -out /etc/pki/tls/certs/nautobot.crt
 
+cat > /etc/systemd/system/nautobot-worker.service <<EOF
+[Unit]
+Description=Nautobot Celery Worker
+Documentation=https://nautobot.readthedocs.io/en/stable/
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=exec
+Environment="NAUTOBOT_ROOT=/opt/nautobot"
+
+User=nautobot
+Group=nautobot
+PIDFile=/var/tmp/nautobot-worker.pid
+WorkingDirectory=/opt/nautobot
+
+ExecStart=/opt/nautobot/bin/nautobot-server celery worker --loglevel INFO --pidfile /var/tmp/nautobot-worker.pid
+
+Restart=always
+RestartSec=30
+PrivateTmp=true
+
+[Install]
+WantedBy=multi-user.target
+EOF 
+
+cat > /etc/systemd/system/nautobot.service <<EOF
+[Unit]
+Description=Nautobot WSGI Service
+Documentation=https://nautobot.readthedocs.io/en/stable/
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+Environment="NAUTOBOT_ROOT=/opt/nautobot"
+
+User=nautobot
+Group=nautobot
+PIDFile=/var/tmp/nautobot.pid
+WorkingDirectory=/opt/nautobot
+
+ExecStart=/opt/nautobot/bin/nautobot-server start --pidfile /var/tmp/nautobot.pid --ini /opt/nautobot/uwsgi.ini
+ExecStop=/opt/nautobot/bin/nautobot-server start --stop /var/tmp/nautobot.pid
+ExecReload=/opt/nautobot/bin/nautobot-server start --reload /var/tmp/nautobot.pid
+
+Restart=on-failure
+RestartSec=30
+PrivateTmp=true
+
+[Install]
+WantedBy=multi-user.target
+EOF
+
 echo 'Install Nginx'
 dnf -y install Nginx
 
@@ -125,3 +179,4 @@ echo 'Copy Nautobot.conf to /etc/nginx/conf.d'
 #PLACE HOLDER
 
 sudo sed -i 's@ default_server@@' /etc/nginx/nginx.conf
+
