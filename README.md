@@ -6,11 +6,11 @@ This is meant to assist users in installing Nautobot on Red Hat Enterprise Linux
 
 Future Plans:
 
-- [] Complete the [setup.sh](https://github.com/beholdenkey/Installing-Nautobot-on-RHEL-A-Complete-Walk-Through/blob/d6275765266b6b4ff4e1bfcdc989ecdc7662ecf4/SECURITY.md) script.
-- [] Add compatibility Checks to [setup.sh](https://github.com/beholdenkey/Installing-Nautobot-on-RHEL-A-Complete-Walk-Through/blob/d6275765266b6b4ff4e1bfcdc989ecdc7662ecf4/SECURITY.md) script.
-- [] Create Installation/Upgrade Playbook
-- [] Build RHEL Kickstart to support the STIG requirements for storage partitions.
-- [] Create Red Hat Universal Basic Image Nautobot container images.
+- [ ] Complete the [setup.sh](https://github.com/beholdenkey/Installing-Nautobot-on-RHEL-A-Complete-Walk-Through/blob/d6275765266b6b4ff4e1bfcdc989ecdc7662ecf4/SECURITY.md) script.
+- [ ] Add compatibility Checks to [setup.sh](https://github.com/beholdenkey/Installing-Nautobot-on-RHEL-A-Complete-Walk-Through/blob/d6275765266b6b4ff4e1bfcdc989ecdc7662ecf4/SECURITY.md) script.
+- [ ] Create Installation/Upgrade Playbook
+- [ ] Build RHEL Kickstart to support the STIG requirements for storage partitions.
+- [ ] Create Red Hat Universal Basic Image Nautobot container images.
 - [X] Move development content from [Pandoras Box](https://github.com/beholdenkey/Pandoras-box) to this repository.
 - [X] Create how to instructions for [RedHatGov STIG Playbook](https://github.com/RedHatGov/rhel8-stig-latest)
 
