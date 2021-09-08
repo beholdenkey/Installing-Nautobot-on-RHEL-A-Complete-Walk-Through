@@ -18,7 +18,8 @@ sudo dnf -y update && \
     python39-devel \
     python39-pip \
     redis \
-    nano
+    nano \
+    openldap-devel #This is for the LDAP configuration, if you are not using LDAP you should remove this from the script.
 
 echo 'Installing Ansible'
 pip3 install wheel
