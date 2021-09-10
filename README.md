@@ -1,6 +1,6 @@
 # Installing Nautobot on Red Hat Enterprise Linux - A Complete Walk Through
 
-## **Table of Contents**
+## Table of Contents
 
 [Step by Step Walk-Through](https://github.com/beholdenkey/Installing-Nautobot-on-RHEL-A-Complete-Walk-Through/blob/main/Docs/README.MD)
 [Security Technical Implementation Guide](https://github.com/beholdenkey/Installing-Nautobot-on-RHEL-A-Complete-Walk-Through/tree/main/STIG)
