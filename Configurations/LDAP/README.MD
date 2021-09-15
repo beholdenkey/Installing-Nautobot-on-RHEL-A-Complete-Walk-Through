@@ -94,3 +94,69 @@ AUTH_LDAP_USER_ATTR_MAP = {
     "email": "mail"
 }
 ```
+
+User Groups for Permissions
+
+>Note:When using Microsoft Active Directory, support for nested groups can be activated by using NestedGroupOfNamesType() instead of GroupOfNamesType() for AUTH_LDAP_GROUP_TYPE. You will also need to modify the import line to use NestedGroupOfNamesType instead of GroupOfNamesType .
+
+```python
+from django_auth_ldap.config import LDAPSearch, GroupOfNamesType
+
+# This search ought to return all groups to which the user belongs. django_auth_ldap uses this to determine group
+# hierarchy.
+AUTH_LDAP_GROUP_SEARCH = LDAPSearch("dc=example,dc=com", ldap.SCOPE_SUBTREE,
+                                    "(objectClass=group)")
+AUTH_LDAP_GROUP_TYPE = GroupOfNamesType()
+
+# Define a group required to login.
+AUTH_LDAP_REQUIRE_GROUP = "CN=NAUTOBOT_USERS,DC=example,DC=com"
+
+# Define special user types using groups. Exercise great caution when assigning superuser status.
+AUTH_LDAP_USER_FLAGS_BY_GROUP = {
+    "is_active": "cn=active,ou=groups,dc=example,dc=com",
+    "is_staff": "cn=staff,ou=groups,dc=example,dc=com",
+    "is_superuser": "cn=superuser,ou=groups,dc=example,dc=com"
+}
+
+# For more granular permissions, we can map LDAP groups to Django groups.
+AUTH_LDAP_FIND_GROUP_PERMS = True
+
+# Cache groups for one hour to reduce LDAP traffic
+AUTH_LDAP_CACHE_TIMEOUT = 3600
+```
+
+- is_active - All users must be mapped to at least this group to enable authentication. Without this, users cannot log in.
+- is_staff - Users mapped to this group are enabled for access to the administration tools; this is the equivalent of checking the "staff status" box on a manually created user. This doesn't grant any specific permissions.
+- is_superuser - Users mapped to this group will be granted superuser status. Superusers are implicitly granted all permissions.
+
+>Note: Authentication will fail if the groups (the distinguished names) do not exist in the LDAP directory.
+
+Troubleshooting LDAP
+
+systemctl restart nautobot restarts the Nautobot service, and initiates any changes made to nautobot_config.py. If there are syntax errors present, the Nautobot process will not spawn an instance, and errors should be logged to /var/log/messages.
+
+For troubleshooting LDAP user/group queries, add or merge the following logging configuration to nautobot_config.py:
+
+```python
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'handlers': {
+        'nautobot_auth_log': {
+            'level': 'DEBUG',
+            'class': 'logging.handlers.RotatingFileHandler',
+            'filename': '/opt/nautobot/logs/django-ldap-debug.log',
+            'maxBytes': 1024 * 500,
+            'backupCount': 5,
+        },
+    },
+    'loggers': {
+        'django_auth_ldap': {
+            'handlers': ['nautobot_auth_log'],
+            'level': 'DEBUG',
+        },
+    },
+}
+```
+
+Ensure the file and path specified in logfile exist and are writable and executable by the application service account. Restart the nautobot service and attempt to log into the site to trigger log entries to this file.
