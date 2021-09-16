@@ -24,7 +24,7 @@ SYSTEM
 - /var
 
 For an example of how this may look when done please see below.
-![RHEL 8 Partition STIG Example](https://github.com/beholdenkey/Installing-Nautobot-on-RHEL-A-Complete-Walk-Through/blob/f7497d4ac505fe123f9f5fe2f025ae7a2bc621ea/Resources/Images/RHEL%208%20Partition%20STIG%20Example.PNG)
+![RHEL 8 Partition STIG Example](https://github.com/beholdenkey/Installing-Nautobot-on-RHEL-A-Complete-Walk-Through/blob/main/Resources/Images/RHEL%208%20Partition%20STIG.PNG)
 
 Step 4: Got to the KDUMP and click disable
 
