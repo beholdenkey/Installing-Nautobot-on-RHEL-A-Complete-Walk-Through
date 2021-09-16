@@ -1,17 +1,31 @@
 # Step by Step Walk-Through of Nautobot Installation on RHEL 8
 
 ## RHEL 8 Initial Setup
+
 Before we do anything else we will need to perform the initial configurations such as selecting the necessary language and so on. The following steps will be changes that may be depending on your organizations policies however the partition changes are a hard requirement.
 
+First we will go to the installation destination and perform the necessary partitions.
 
+Step 1: Go down to "Storage Configuration" and select custom, and then click done.
 
+Step 2: Click the "Click here to create them automatically" (From here you will add in the additional data and system partitions)
 
+Step 3: Create the following partitions.(For now I will not have the ratios available)
 
+DATA
 
+- /var/log
+- /var/log/audit
+- /var/tmp
 
->Note: Keep in mind that we will be applying the RHEL 8 STIG and this will require additional resources for the increased storage requirements.
+SYSTEM
 
-Step 1:
+- /tmp
+- /var
+
+## Nautobot Installation and Configuration
+
+>Note: You by no means need to clone my repo to your system this is just a convenience and will allow you to copy and move files versus typing them out.
 
 ```bash
 git clone https://github.com/beholdenkey/Installing-Nautobot-on-RHEL-A-Complete-Walk-Through.git
