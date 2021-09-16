@@ -26,6 +26,16 @@ SYSTEM
 For an example of how this may look when done please see below.
 ![RHEL 8 Partition STIG Example](https://github.com/beholdenkey/Installing-Nautobot-on-RHEL-A-Complete-Walk-Through/blob/f7497d4ac505fe123f9f5fe2f025ae7a2bc621ea/Resources/Images/RHEL%208%20Partition%20STIG%20Example.PNG)
 
+Step 4: Got to the KDUMP and click disable
+
+Step 5: Configure you Network and Hostname
+
+Step 6: Connect to your Red Hat CDN
+
+Step 7: Make your software selection (I normally select "Minimal Install")
+
+Step 8: Setup your root and User Account
+
 ## Nautobot Installation and Configuration
 
 >Note: You do not need to clone my repo to your system; this is convenient and will allow you to copy and move files versus typing them out.
