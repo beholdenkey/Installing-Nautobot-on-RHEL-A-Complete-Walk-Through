@@ -1,4 +1,8 @@
 ---
+#---
+# file: site.yml
+#- import_playbook: webservers.yml
+#- import_playbook: dbservers.yml
 - name: Install Nautobot, Postgresql, Redis, Nginx,
   hosts: all
   remote_user: root

@@ -1,1 +1,7 @@
 ---
+---
+# file: webservers.yml
+- hosts: webservers
+  roles:
+    - nautobot
+    - nginx
