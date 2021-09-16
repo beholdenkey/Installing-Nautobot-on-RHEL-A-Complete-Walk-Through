@@ -17,6 +17,7 @@ Future Plans:
 - [ ] Create Installation/Upgrade Playbook
 - [ ] Build RHEL Kickstart to support the STIG requirements for storage partitions.
 - [ ] Create Red Hat Universal Basic Image Nautobot container images.
+- [ ] Add STIG Partitioning Guide and Ratio's
 - [X] Move development content from [Pandoras Box](https://github.com/beholdenkey/Pandoras-box) to this repository.
 - [X] Create how to instructions for [RedHatGov STIG Playbook](https://github.com/RedHatGov/rhel8-stig-latest)
 

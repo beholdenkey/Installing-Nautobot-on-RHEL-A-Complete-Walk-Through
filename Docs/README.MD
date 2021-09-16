@@ -1,5 +1,7 @@
 # Step by Step Walk-Through of Nautobot Installation on RHEL 8
 
+## RHEL 8 Initial Setup
+Before we do anything else we will need to perform the initial configurations such as selecting the neccessary language and so on. The following steps will be changes that may be depending on your organiazations policies however the partition changes are a hard requirement.
 >Note: Keep in mind that we will be applying the RHEL 8 STIG and this will require additional resources for the increased storage requirements.
 
 Step 1:
