@@ -1,1 +1,5 @@
 ---
+- hosts: dbservers
+  roles:
+    - redis
+    - postgresql
