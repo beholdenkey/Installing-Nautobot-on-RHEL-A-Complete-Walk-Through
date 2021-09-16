@@ -23,6 +23,9 @@ SYSTEM
 - /tmp
 - /var
 
+For an example of how this may look when done please see below.
+![RHEL 8 Partition STIG Example](https://github.com/beholdenkey/Installing-Nautobot-on-RHEL-A-Complete-Walk-Through/blob/f7497d4ac505fe123f9f5fe2f025ae7a2bc621ea/Resources/Images/RHEL%208%20Partition%20STIG%20Example.PNG)
+
 ## Nautobot Installation and Configuration
 
 >Note: You by no means need to clone my repo to your system this is just a convenience and will allow you to copy and move files versus typing them out.
