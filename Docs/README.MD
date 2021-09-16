@@ -2,15 +2,15 @@
 
 ## RHEL 8 Initial Setup
 
-Before we do anything else we will need to perform the initial configurations such as selecting the necessary language and so on. The following steps will be changes that may be depending on your organizations policies however the partition changes are a hard requirement.
+Before we do anything else, we will need to perform the initial configurations, such as selecting the necessary language. The following steps will be changes that may be depending on your organization's policies; however, the partition changes are a hard requirement.
 
-First we will go to the installation destination and perform the necessary partitions.
+First, we will go to the installation destination and perform the necessary partitions.
 
-Step 1: Go down to "Storage Configuration" and select custom, and then click done.
+Step 1: Go down to "Storage Configuration," and select custom, and then click done.
 
-Step 2: Click the "Click here to create them automatically" (From here you will add in the additional data and system partitions)
+Step 2: Click the "Click here to create them automatically" If you do click create them automatically, you will need to go back and reduce the partition size of the other partitions to give yourself enough space to create the new ones. (From here, you will add in the additional data and system partitions)
 
-Step 3: Create the following partitions.(For now I will not have the ratios available)
+Step 3: Create the following partitions.(For now, I will not have the ratios available)
 
 DATA
 
@@ -28,7 +28,7 @@ For an example of how this may look when done please see below.
 
 ## Nautobot Installation and Configuration
 
->Note: You by no means need to clone my repo to your system this is just a convenience and will allow you to copy and move files versus typing them out.
+>Note: You do not need to clone my repo to your system; this is convenient and will allow you to copy and move files versus typing them out.
 
 ```bash
 git clone https://github.com/beholdenkey/Installing-Nautobot-on-RHEL-A-Complete-Walk-Through.git
@@ -42,18 +42,18 @@ chmod +x setup.sh
 ./setup.sh
 ```
 
->Note: It is crucial that you review the setup.sh file before execution this is not one of those scripts that will do everything for you.
+>Note: You must review the setup.sh file before execution; this is not one of those scripts that will do everything for you.
 
 Step 2:
 
 Create the database
->Note: This process will not go into setting up anything more than the bare minimum required database to support the Nautobot application. In the future I wil add documentation and instructions supporting my stream replication as well as load balancing support.
+>Note: This process will not set up anything more than the bare minimum required database to support the Nautobot application. In the future, I will add documentation and instructions supporting my stream replication and load balancing support.
 
 ```bash
 sudo -u postgres psql
 ```
 
->Note: These passwords are not secure and it is highly recommended that you set the password for the postgres role because if the password is not set there is essentially nothing stop someone from making changes if they are able to access the server.
+>Note: These passwords are not secure, and it is highly recommended that you set the password for the Postgres role because if the password is not set, there is essentially nothing to stop someone from making changes if they can access the server.
 
 ```SQL
 postgres=# CREATE DATABASE nautobot;
@@ -73,11 +73,11 @@ postgres=# \q
 
 Verify the Service Status
 
-You can verify that authentication works issuing the following command and providing the configured password. (Replace localhost with your database server if using a remote database.)
+You can verify that authentication works by issuing the following command and providing the configured password. (Replace localhost with your database server if using a remote database.)
 
 If successful, you will enter a nautobot prompt. Type \conninfo to confirm your connection, or type \q to exit.
 
->Now that you have exited you will need to go back in as the Nautobot Role and Connect to the Nautobot Database both of which you just created previously.
+>Note: Now that you have exited, you will need to go back in as the Nautobot Role and Connect to the Nautobot Database, both of which you previously created.
 
 ```SQL
 psql --username nautobot --password --host localhost nautobot
@@ -88,7 +88,7 @@ nautobot=> \conninfo
 You are connected to database "nautobot" as user "nautobot" on host "localhost" (address "127.0.0.1") at port "5432".
 ```
 
-By default these setting are sufficient because this database all need to be accessed locally by the Nautobot application.
+By default, these settings are sufficient because this database all be accessed locally by the Nautobot application.
 
 Step 3:
 
