@@ -5,7 +5,6 @@
 # Script to install Nautobot -  RHEL 8
 # This process is being used to Create a Virtual Machine to then export as an OVA for Production Deployments.
 #------------------------------------------------------------- #
-# Leave the Host Name as the default (localhost.localdomain) this can be changed as needed later.
 # It is important to remember that you need to remove all Network Configurations prior to exporting as an OVA
 # The DISA STIG for Red Hat Enterprise LInux - Will be applied so be sure to correctly partition the storage
 # Note this script is still a work in progress.
@@ -19,6 +18,7 @@ sudo dnf -y update && \
     python39-pip \
     redis \
     nano \
+    nginx \
     openldap-devel #This is for the LDAP configuration, if you are not using LDAP you should remove this from the script.
 
 echo 'Installing Ansible'
