@@ -4,5 +4,6 @@
         "KDUMP",
         "u",
         "wsgi"
-    ]
+    ],
+    "python.pythonPath": "C:\\Users\\TheUser\\AppData\\Local\\Microsoft\\WindowsApps\\python.exe"
 }
