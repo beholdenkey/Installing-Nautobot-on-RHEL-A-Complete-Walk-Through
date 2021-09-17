@@ -156,11 +156,11 @@ sudo -iu nautobot
 
 >Note: Unless explicitly stated, all remaining steps requiring the use of pip3 or nautobot-server in this document should be performed as the nautobot user!
 
-```python
+```bash
 pip3 install --upgrade pip wheel
 ```
 
-```python
+```bash
 pip3 install nautobot
 ```
 
@@ -201,4 +201,10 @@ Install Local Requirements:
 
 ```bash
 pip3 install -r $NAUTOBOT_ROOT/local_requirements.txt
+```
+
+To add packages to you local_requirements.txt so that it can be installed and kept up to date:
+
+```bash
+echo <package> >> $NAUTOBOT_ROOT/local_requirements.txt
 ```
