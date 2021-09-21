@@ -58,7 +58,15 @@ ansible-galaxy install redhatofficial.rhel8_stig
 ```
 
 ```bash
-git clone https://github.com/RedHatGov/rhel8-stig-latest /etc/ansible/playbooks/rhel8-stig-latest
+mkdir /etc/ansible/playbooks
+```
+
+```bash
+cd /etc/ansible/playbooks
+```
+
+```bash
+git clone https://github.com/RedHatGov/rhel8-stig-latest 
 ```
 
 Now that all of the staging and prerequisites have been taken care of and you have performed your checks we can not stop the services running the server. In the case of Nautobot we will be performing the following.
