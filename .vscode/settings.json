@@ -1,7 +1,10 @@
 {
     "cSpell.words": [
         "backends",
+        "CACHEOPS",
+        "conninfo",
         "KDUMP",
+        "psql",
         "u",
         "wsgi"
     ],
