@@ -99,3 +99,22 @@ Post Security Implementation Nautobot Management:
 
 As many of you know, implementing a STIG changes many aspects of how a system performs or, more appropriately, what it doesn't function. With that being said, even though we did the right thing and created a system account for nautobot, allowing us to use the nautobot-server, you may notice that after the stig is implemented, you can no longer use the nautobot-server commands.
 ![Operation Not Permitted](https://github.com/beholdenkey/Installing-Nautobot-on-RHEL-A-Complete-Walk-Through/blob/main/Resources/Images/nautobot-server_operation_not_permitted.PNG)
+
+Solution:
+
+>Note: As of right now, this is the best solution I have found that doesn't result in altering SELinux rules or the STIG.
+
+```bash
+# Account with administrator privileges
+su root
+```
+
+```bash
+source /opt/nautobot/bin/activate
+```
+
+Then perform the following to verify functionality
+
+```bash
+nautobot-server check
+```
