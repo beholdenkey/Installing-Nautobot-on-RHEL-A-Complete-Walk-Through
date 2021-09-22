@@ -27,3 +27,5 @@
 - [Python Install](https://github.com/beholdenkey/Installing-Nautobot-on-RHEL-A-Complete-Walk-Through/blob/68eca129a5192a8d603518c0692842a6819b4826/Resources/Python/python_install.sh)
 
 - [Compliance as Code](https://github.com/ComplianceAsCode/content)
+
+- [Red Hat Managing Users and Groups](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7/html/system_administrators_guide/ch-managing_users_and_groups)
