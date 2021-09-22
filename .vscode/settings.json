@@ -3,8 +3,10 @@
         "backends",
         "CACHEOPS",
         "conninfo",
+        "devel",
         "KDUMP",
         "psql",
+        "redhatofficial",
         "u",
         "wsgi"
     ],

@@ -94,3 +94,7 @@ systemctl is-active redis postgresql nautobot nautobot-worker nginx
 ```
 
 After functionality of all services and dependencies has been confirmed you can then proceed to go attempt to access the Nautobot instance.
+
+Post Security Implementation Nautobot Management:
+
+As many of you know, implementing a STIG changes many aspects of how a system performs or, more appropriately, what it doesn't function. With that being said, even though we did the right thing and created a system account for nautobot, allowing us to use the nautobot-server, you may notice that after the stig is implemented, you can no longer use the nautobot-server commands. 
