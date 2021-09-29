@@ -1,4 +1,4 @@
-# Contributor Guideline
+# Contributor Guidelines
 
 This document provides an overview of how you can participate in improving this project or extending it. We are
 grateful for all your help: bug reports and fixes, code contributions, documentation or ideas. Feel free to join, we appreciate your support!!
