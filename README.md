@@ -53,3 +53,5 @@ dnf -y install \
 ```
 
 ## [Resources](https://github.com/beholdenkey/Installing-Nautobot-on-RHEL-A-Complete-Walk-Through/tree/main/Resources)
+
+The resources directory contains materials that can be useful when it comes to using this repository.
