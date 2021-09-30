@@ -1,15 +1,16 @@
-# Installing Nautobot on Red Hat Enterprise Linux - A Complete Walk Through
+# 1. Installing Nautobot on Red Hat Enterprise Linux - A Complete Walk Through
 
-## Table of Contents
-- [Installing Nautobot on Red Hat Enterprise Linux - A Complete Walk Through](#installing-nautobot-on-red-hat-enterprise-linux---a-complete-walk-through)
-  - [Table of Contents](#table-of-contents)
-  - [Future Plans](#future-plans)
-  - [Pre-requisites](#pre-requisites)
-  - [Resources](#resources)
+## 1.1. Table of Contents
+
+- [1. Installing Nautobot on Red Hat Enterprise Linux - A Complete Walk Through](#1-installing-nautobot-on-red-hat-enterprise-linux---a-complete-walk-through)
+  - [1.1. Table of Contents](#11-table-of-contents)
+  - [1.2. Future Plans](#12-future-plans)
+  - [1.3. Pre-requisites](#13-pre-requisites)
+  - [1.4. Resources](#14-resources)
 
 This is meant to assist users in installing Nautobot on Red Hat Enterprise Linux. I will go through the process of installation, hardening, and STIG implementation. This will be all done on a Virtual Machine. In addition, I will be using the ansible-playbook for the RHEL 8 STIG implementation. Please refer to the resources directory for the links to these repositories. Also, if you are not familiar with the dependencies of Nautobot, I highly recommend that you do some reading because nautobot consists of a rather diverse Application Stack.
 
-## Future Plans
+## 1.2. Future Plans
 
 - [X] Add Step by Step [LDAP](https://github.com/beholdenkey/Installing-Nautobot-on-RHEL-A-Complete-Walk-Through/tree/main/Configurations/LDAP) instructions for Nautobot and update nautobot_config.py template with changes
 - [ ] Complete the [setup.sh](https://github.com/beholdenkey/Installing-Nautobot-on-RHEL-A-Complete-Walk-Through/blob/d6275765266b6b4ff4e1bfcdc989ecdc7662ecf4/SECURITY.md) script.
@@ -22,7 +23,7 @@ This is meant to assist users in installing Nautobot on Red Hat Enterprise Linux
 - [X] Move development content from [Pandoras Box](https://github.com/beholdenkey/Pandoras-box) to this repository.
 - [X] Create how to instructions for [RedHatGov STIG Playbook](https://github.com/RedHatGov/rhel8-stig-latest)
 
-## Pre-requisites
+## 1.3. Pre-requisites
 
 Minimum VM Resource Requirements:
 >Note: These are the minimum requirements these are not the recommended requirements for a production environment.
@@ -52,6 +53,6 @@ dnf -y install \
     python39-pip
 ```
 
-## [Resources](https://github.com/beholdenkey/Installing-Nautobot-on-RHEL-A-Complete-Walk-Through/tree/main/Resources)
+## 1.4. [Resources](https://github.com/beholdenkey/Installing-Nautobot-on-RHEL-A-Complete-Walk-Through/tree/main/Resources)
 
 The resources directory contains materials that can be useful when it comes to using this repository.
