@@ -1,14 +1,17 @@
 {
-    "cSpell.words": [
-        "backends",
-        "CACHEOPS",
-        "conninfo",
-        "devel",
-        "KDUMP",
-        "psql",
-        "redhatofficial",
-        "u",
-        "wsgi"
-    ],
-    "python.pythonPath": "C:\\Users\\TheUser\\AppData\\Local\\Microsoft\\WindowsApps\\python.exe"
+  "cSpell.words": [
+    "backends",
+    "CACHEOPS",
+    "conninfo",
+    "devel",
+    "generateg",
+    "KDUMP",
+    "psql",
+    "redhatofficial",
+    "testinfra",
+    "u",
+    "wsgi",
+    "yamllint"
+  ],
+  "python.pythonPath": "C:\\Users\\TheUser\\AppData\\Local\\Microsoft\\WindowsApps\\python.exe"
 }
