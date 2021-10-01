@@ -2,13 +2,14 @@
 
 ## Table of Contents
 
-- [Step by Step Walk-Through](https://github.com/beholdenkey/Installing-Nautobot-on-RHEL-A-Complete-Walk-Through/blob/main/Docs/README.MD)
-- [Security Technical Implementation Guide](https://github.com/beholdenkey/Installing-Nautobot-on-RHEL-A-Complete-Walk-Through/tree/main/STIG)
-- [Resources](<https://github.com/beholdenkey/Installing-Nautobot-on-RHEL-A-Complete-Walk-Through/tree/main/Resources>)
+- [Installing Nautobot on Red Hat Enterprise Linux - A Complete Walk Through](#installing-nautobot-on-red-hat-enterprise-linux---a-complete-walk-through)
+  - [Table of Contents](#table-of-contents)
+  - [Future Plans](#future-plans)
+  - [Pre-requisites](#pre-requisites)
 
 This is meant to assist users in installing Nautobot on Red Hat Enterprise Linux. I will go through the process of installation, hardening, and STIG implementation. This will be all done on a Virtual Machine. In addition, I will be using the ansible-playbook for the RHEL 8 STIG implementation. Please refer to the resources directory for the links to these repositories. Also, if you are not familiar with the dependencies of Nautobot, I highly recommend that you do some reading because nautobot consists of a rather diverse Application Stack.
 
-Future Plans:
+## Future Plans
 
 - [X] Add Step by Step [LDAP](https://github.com/beholdenkey/Installing-Nautobot-on-RHEL-A-Complete-Walk-Through/tree/main/Configurations/LDAP) instructions for Nautobot and update nautobot_config.py template with changes
 - [ ] Complete the [setup.sh](https://github.com/beholdenkey/Installing-Nautobot-on-RHEL-A-Complete-Walk-Through/blob/d6275765266b6b4ff4e1bfcdc989ecdc7662ecf4/SECURITY.md) script.

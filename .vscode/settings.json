@@ -13,5 +13,6 @@
     "wsgi",
     "yamllint"
   ],
-  "python.pythonPath": "C:\\Users\\TheUser\\AppData\\Local\\Microsoft\\WindowsApps\\python.exe"
+  "python.pythonPath": "/bin/python",
+  "python.formatting.provider": "black"
 }
