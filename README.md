@@ -1,6 +1,4 @@
-# 1. Installing Nautobot on Red Hat Enterprise Linux - A Complete Walk Through
-
-## 1.1. Table of Contents
+# 1. Installing Nautobot on Red Hat Enterprise Linux: A Complete Walk Through
 
 - [1. Installing Nautobot on Red Hat Enterprise Linux - A Complete Walk Through](#1-installing-nautobot-on-red-hat-enterprise-linux---a-complete-walk-through)
   - [1.1. Table of Contents](#11-table-of-contents)
