@@ -1,9 +1,12 @@
 # 1. Installing Nautobot on Red Hat Enterprise Linux: A Complete Walk Through
 
 - [1. Installing Nautobot on Red Hat Enterprise Linux: A Complete Walk Through](#1-installing-nautobot-on-red-hat-enterprise-linux-a-complete-walk-through)
+  - [1.1. Synopsis](#11-synopsis)
   - [1.2. Future Plans](#12-future-plans)
   - [1.3. Pre-requisites](#13-pre-requisites)
   - [1.4. Resources](#14-resources)
+
+## 1.1. Synopsis
 
 This is meant to assist users in installing Nautobot on Red Hat Enterprise Linux. I will go through the process of installation, hardening, and STIG implementation. This will be all done on a Virtual Machine. In addition, I will be using the ansible-playbook for the RHEL 8 STIG implementation. Please refer to the resources directory for the links to these repositories. Also, if you are not familiar with the dependencies of Nautobot, I highly recommend that you do some reading because nautobot consists of a rather diverse Application Stack.
 
