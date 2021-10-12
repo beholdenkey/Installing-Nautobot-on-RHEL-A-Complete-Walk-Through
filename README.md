@@ -7,7 +7,8 @@
   - [1.1 Synopsis](#11-synopsis)
   - [1.2 Future Plans](#12-future-plans)
   - [1.3 Pre-requisites](#13-pre-requisites)
-  - [1.4 Resources](#14-resources)
+  - [1.4 Upgrading Nautobot](#14-upgrading-nautobot)
+  - [1.5 Resources](#15-resources)
 
 ## 1.1 Synopsis
 
@@ -56,6 +57,39 @@ dnf -y install \
     python39-pip
 ```
 
-## 1.4 [Resources](https://github.com/beholdenkey/Installing-Nautobot-on-RHEL-A-Complete-Walk-Through/tree/main/Resources)
+## 1.4 Upgrading Nautobot
+
+Upgrading the Nautobot application is a relatively painless process. However if you have applied a STIG to the Operating System there are some changes you will have to take into consideration when you are going through the upgrade process.
+
+When the STIG is applied it will remove the base OpenSSL package and install the OpenSSL FIPS compliant package. This will cause some issues because Nautobot uses the MD5 hashing algorithm and per the Federal Information Processing Standard 140-2 (FIPS 140-2)
+
+There are a few possible resolutions to this problem. The initial resolution is to enable FIPS mode before the server is installed and configured. This will ensure that the correct algorithms are used prior to applying a STIG.
+
+You can enable or disable FIPS using the following commands:
+
+```bash
+fips-mode-setup --enable
+```
+
+```bash
+fips-mode-setup --disable
+```
+
+>Note: When you enable or disable FIPS you will need to perform a reboot after for it to take effect.
+
+Lets Upgrade Nautobot
+
+```bash
+sudo -iu nautobot
+su root
+source /opt/nautobot/bin/activate
+pip3 install --upgrade pip
+pip3 install --upgrade nautobot
+pip3 install --upgrade -r $NAUTOBOT_ROOT/local_requirements.txt
+nautobot-server post_upgrade
+systemctl restart nautobot nautobot-worker
+```
+
+## 1.5 [Resources](https://github.com/beholdenkey/Installing-Nautobot-on-RHEL-A-Complete-Walk-Through/tree/main/Resources)
 
 The resources directory contains materials that can be useful when it comes to using this repository.
