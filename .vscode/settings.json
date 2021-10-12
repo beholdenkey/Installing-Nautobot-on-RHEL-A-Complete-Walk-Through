@@ -4,6 +4,7 @@
     "CACHEOPS",
     "conninfo",
     "devel",
+    "FIPS",
     "generateg",
     "KDUMP",
     "psql",
