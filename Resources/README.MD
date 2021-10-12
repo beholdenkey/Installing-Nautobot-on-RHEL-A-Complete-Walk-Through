@@ -29,3 +29,5 @@
 - [Compliance as Code](https://github.com/ComplianceAsCode/content)
 
 - [Red Hat Managing Users and Groups](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7/html/system_administrators_guide/ch-managing_users_and_groups)
+
+- [OpenSSL](https://www.openssl.org/source/)
