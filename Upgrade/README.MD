@@ -17,3 +17,16 @@ fips-mode-setup --disable
 ```
 
 >Note: When you enable or disable FIPS you will need to perform a reboot after for it to take effect.
+
+Now for the Upgrade
+
+```bash
+sudo -iu nautobot
+su root
+source /opt/nautobot/bin/activate
+pip3 install --upgrade pip
+pip3 install --upgrade nautobot
+pip3 install --upgrade -r $NAUTOBOT_ROOT/local_requirements.txt
+nautobot-server post_upgrade
+systemctl restart nautobot nautobot-worker
+```
