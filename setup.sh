@@ -22,8 +22,8 @@ sudo dnf -y update && \
     openldap-devel #This is for the LDAP configuration, if you are not using LDAP you should remove this from the script.
 
 echo 'Installing Ansible'
-pip3 install wheel
-pip3 install ansible
+sudo subscription-manager repos --enable ansible-2.9-for-rhel-8-x86_64-rpms # Not Required for Fedora
+dnf -y install ansible
 
 echo 'Exposing port 443'
 firewall-cmd --permanent --add-port=443/tcp
