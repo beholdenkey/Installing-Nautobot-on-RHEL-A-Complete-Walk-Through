@@ -113,11 +113,11 @@ ALLOWED_URL_SCHEMES = (
 
 # Optionally display a persistent banner at the top and/or bottom of every page. HTML is allowed. To display the same
 # content in both banners, define BANNER_TOP and set BANNER_BOTTOM = BANNER_TOP.
-BANNER_TOP = os.getenv("NAUTOBOT_BANNER_TOP", "JCU Nautobot")
-BANNER_BOTTOM = os.getenv("NAUTOBOT_BANNER_BOTTOM", "JCU Nautobot")
+BANNER_TOP = os.getenv("NAUTOBOT_BANNER_TOP", "PlaceHolder")
+BANNER_BOTTOM = os.getenv("NAUTOBOT_BANNER_BOTTOM", "PlaceHolder")
 
 # Text to include on the login page above the login form. HTML is allowed.
-BANNER_LOGIN = os.getenv("NAUTOBOT_BANNER_LOGIN", "JCU Nautobot")
+BANNER_LOGIN = os.getenv("NAUTOBOT_BANNER_LOGIN", "PlaceHolder")
 
 # Cache timeout in seconds. Cannot be 0. Defaults to 900 (15 minutes). To disable caching, set CACHEOPS_ENABLED to False
 CACHEOPS_DEFAULTS = {"timeout": int(
