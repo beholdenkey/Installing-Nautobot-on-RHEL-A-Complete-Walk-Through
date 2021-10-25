@@ -16,6 +16,8 @@ This is meant to assist users in installing Nautobot on Red Hat Enterprise Linux
 
 ## 1.2 Future Plans
 
+- [ ] Re-structure Documentation is a more learner friendly orientation.
+- [ ] Test alternative Install Processes.
 - [X] Add Step by Step [LDAP](https://github.com/beholdenkey/Installing-Nautobot-on-RHEL-A-Complete-Walk-Through/tree/main/Configurations/LDAP) instructions for Nautobot and update nautobot_config.py template with changes
 - [ ] Complete the [setup.sh](https://github.com/beholdenkey/Installing-Nautobot-on-RHEL-A-Complete-Walk-Through/blob/d6275765266b6b4ff4e1bfcdc989ecdc7662ecf4/SECURITY.md) script.
 - [ ] Add compatibility Checks to [setup.sh](https://github.com/beholdenkey/Installing-Nautobot-on-RHEL-A-Complete-Walk-Through/blob/d6275765266b6b4ff4e1bfcdc989ecdc7662ecf4/SECURITY.md) script.
