@@ -172,9 +172,6 @@ PrivateTmp=true
 WantedBy=multi-user.target
 EOF
 
-echo 'Install Nginx'
-dnf -y install Nginx
-
 echo 'Copy Nautobot.conf to /etc/nginx/conf.d'
 
 #PLACE HOLDER
