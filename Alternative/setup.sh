@@ -18,6 +18,9 @@ sudo dnf -y update && \
     nginx \
     ansible
 
+echo 'Enable FIPS'
+fips-mode-setup --enable
+
 echo 'Exposing port 443'
 firewall-cmd --permanent --add-port=443/tcp
 firewall-cmd --permanent --add-port=80/tcp
