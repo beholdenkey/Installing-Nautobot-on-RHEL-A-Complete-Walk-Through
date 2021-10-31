@@ -4,10 +4,10 @@
 
 - [Installing Nautobot on Red Hat Enterprise Linux: A Complete Walk Through](#installing-nautobot-on-red-hat-enterprise-linux-a-complete-walk-through)
   - [Table of Contents](#table-of-contents)
-  - [1.1 Synopsis](#11-synopsis)
-  - [1.2 Dependencies](#12-dependencies)
+  - [Synopsis](#synopsis)
+  - [Dependencies](#dependencies)
     - [Mandatory dependencies](#mandatory-dependencies)
-  - [1.3 Server Requirements](#13-server-requirements)
+  - [Server Requirements](#server-requirements)
   - [Preparing Operating System](#preparing-operating-system)
     - [Update Operating System and install System Packages](#update-operating-system-and-install-system-packages)
     - [Enable FIPS](#enable-fips)
@@ -28,11 +28,11 @@
     - [Configure HTTP Server](#configure-http-server)
   - [Closing Comments](#closing-comments)
 
-## 1.1 Synopsis
+## Synopsis
 
 This guide assists users in installing Nautobot on Red Hat Enterprise Linux. Although this installation guide focused on supporting organizations that require an increased standard of security, it can easily be forked and modified to support the needs of others. I will go through the process of installation, hardening, and STIG implementation. In addition, I will be using the ansible-playbook for the RHEL 8 STIG implementation. Please refer to the resources directory for the links to these repositories. Also, if you are not familiar with the dependencies of Nautobot, I highly recommend that you do some reading because nautobot consists of a rather diverse Application Stack.
 
-## 1.2 Dependencies
+## Dependencies
 
 ### Mandatory dependencies
 
@@ -44,7 +44,7 @@ The following minimum versions are required for Nautobot to operate and the vers
 | PostgreSQL | Database     | 9.6             | 14.1              |
 | Redis      | Cache, Queue | 4.0             | 6.1               |
 
-## 1.3 Server Requirements
+## Server Requirements
 
 Minimum VM Resource Requirements:
 >Note: These are the minimum requirements these are not the recommended requirements for a production environment.
