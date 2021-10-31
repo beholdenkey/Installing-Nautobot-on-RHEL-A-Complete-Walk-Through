@@ -306,7 +306,7 @@ redis-cli ping
 
 ### Configure Nautobot Account and Environment
 
-Create a system user account named nautobot. This user will own all of the Nautobot files, and the Nautobot web services will be configured to run under this account.
+Create a  user account named nautobot. This user will own all of the Nautobot files, and the Nautobot web services will be configured to run under this account.
 The following command also creates the /opt/nautobot directory and sets it as the home directory for the user.
 
 ```bash
@@ -323,7 +323,7 @@ sudo -u nautobot python3 -m venv /opt/nautobot
 "export NAUTOBOT_ROOT=/opt/nautobot" | sudo tee -a ~nautobot/.bashrc
 ```
 
-From here on out these you must perform actions as the nautobot user because the nautobot user is directly tied to the venv
+ From here on out these, you must perform actions as the nautobot user because the nautobot user is directly tied to the venv.
 
 ```bash
 sudo -iu
@@ -350,7 +350,7 @@ nautobot-server --version
 
 Step 5: Initialize your Configuration
 
-Initialize a new configuration by running nautobot-server init. You may specify an alternate location and detailed instructions for this are covered in the documentation on Nautobot Configuration.
+Initialize a new configuration by running nautobot-server init.
 
 However, because we've set the NAUTOBOT_ROOT, this command will automatically create a new nautobot_config.py at the default location based on this at $NAUTOBOT_ROOT/nautobot_config.py:
 
@@ -398,7 +398,7 @@ nautobot-server createsuperuser
 nautobot-server collectstatic
 ```
 
-Now you can verify functionality by starting it up in a development mode. This is absolutely not for production purposes. It is just to make sure that all of your changes are accepted.
+Now you can verify functionality by starting it up in a development mode. This is not for production purposes. It is just to make sure that all of your changes are accepted.
 
 ```bash
 nautobot-server check
@@ -408,7 +408,7 @@ nautobot-server check
 nautobot-server runserver 0.0.0.0:8080 --insecure
 ```
 
-You can login and verify account then exit web page and move onto the next steps.
+You can log in and verify your account, then exit the web page and move on to the next steps.
 
 ## Deploying Nautobot Web Service and Workers
 
@@ -559,8 +559,8 @@ systemctl status nautobot-worker
 ```
 
 ### Configure HTTP Server
- 
->Note: This section may differ greatly depending on your organization. With that being said I am only going to cover self signed certificates
+
+Note: This section may differ significantly depending on your organization. With that being said, I am only going to cover self-signed certificates
 
 ```bash
 sudo openssl req -x509 -nodes -days 365 -newkey rsa:4096 \
@@ -632,8 +632,8 @@ As the ``nautobot`` user perform the following
 chmod 755 $NAUTOBOT_ROOT
 ```
 
-Now you can attempt to access the Nautobot login page via the IP address you set for the operating system
+You can now access the Nautobot login page via the IPv4 address you set for the operating system.
 
 ## Closing Comments
 
-There is still a lot of changes coming to this guide and a lot things to be tested. I decided to redo my documentation because a lot of it was getting difficult for even myself to read and understand. Please feel free to submit and issue if you see something that is wrong or something that could be better.
+There are still many changes coming to this guide and a lot of things to be tested. I decided to redo my documentation because it was getting difficult for even myself to read and understand. Please feel free to submit an issue if you see something wrong or something that could be better.
