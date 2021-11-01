@@ -5,7 +5,8 @@
   - [Part 2](Enterprise-Nautobot-Installation/dependency_configuration.md)
   - [Part 3](Enterprise-Nautobot-Installation/install_nautobot.md)
 - Applying Security Implementation Guide
-  - [Overview](chapter-2/overview.md)
+  - [Overview](Applying-Security-Implementation-Guide/overview.md)
+  - [Part 1]()
 
 **PROJECT INFO**  
 * [GitHub Repository](https://github.com/beholdenkey/Installing-Nautobot-on-RHEL-A-Complete-Walk-Through)
