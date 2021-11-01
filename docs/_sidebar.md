@@ -6,8 +6,11 @@
   - [Part 3](Enterprise-Nautobot-Installation/install_nautobot.md)
 - Applying Security Implementation Guide
   - [Overview](Applying-Security-Implementation-Guide/overview.md)
-  - [Part 1]()
+  - [Part 1](Applying-Security-Implementation-Guide/preparations.md)
+  - [Part 2](Applying-Security-Implementation-Guide/Applying-STIG.md)
+  - [Part 3](Applying-Security-Implementation-Guide/troubleshooting.md)
 
 **PROJECT INFO**  
-* [GitHub Repository](https://github.com/beholdenkey/Installing-Nautobot-on-RHEL-A-Complete-Walk-Through)
-* [ReadMe](https://github.com/beholdenkey/Installing-Nautobot-on-RHEL-A-Complete-Walk-Through/blob/main/README.md)  
+
+- [GitHub Repository](https://github.com/beholdenkey/Installing-Nautobot-on-RHEL-A-Complete-Walk-Through)
+- [ReadMe](https://github.com/beholdenkey/Installing-Nautobot-on-RHEL-A-Complete-Walk-Through/blob/main/README.md)  
