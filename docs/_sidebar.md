@@ -2,8 +2,10 @@
 - Enterprise Nautobot Installation
   - [Overview](Enterprise-Nautobot-Installation/overview.md)
   - [Part 1](Enterprise-Nautobot-Installation/os_preparation.md)
+    - [Configure OS](Configure-RHEL-OS/configure-rhel-os.md)
   - [Part 2](Enterprise-Nautobot-Installation/dependency_configuration.md)
   - [Part 3](Enterprise-Nautobot-Installation/install_nautobot.md)
+  - [Upgrade Nautobot](Enterprise-Nautobot-Installation/upgrade.md)
 - Applying Security Implementation Guide
   - [Overview](Applying-Security-Implementation-Guide/overview.md)
   - [Part 1](Applying-Security-Implementation-Guide/preparations.md)
