@@ -26,6 +26,7 @@
     - [Nautobot Worker Service](#nautobot-worker-service)
       - [Configure Systemd for new Services](#configure-systemd-for-new-services)
     - [Configure HTTP Server](#configure-http-server)
+  - [Sources](#sources)
   - [Closing Comments](#closing-comments)
 
 ## Synopsis
@@ -633,6 +634,11 @@ chmod 755 $NAUTOBOT_ROOT
 ```
 
 You can now access the Nautobot login page via the IPv4 address you set for the operating system.
+
+## Sources
+
+- [Nautobot Read The Docs](https://nautobot.readthedocs.io/en/stable/)
+- [Nautobot](https://github.com/nautobot)
 
 ## Closing Comments
 
