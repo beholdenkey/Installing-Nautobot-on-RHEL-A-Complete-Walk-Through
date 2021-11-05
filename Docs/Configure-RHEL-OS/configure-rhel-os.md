@@ -1,7 +1,5 @@
 # Preparing Red Hat Enterprise Linux Operating System
 
-## Preparing Operating System
-
 Before we do anything else, we will need to perform the initial configurations, such as selecting the necessary language. The following steps will be changes that may be depending on your organization's policies; however, the partition changes are a hard requirement.
 
 First, we will go to the installation destination and perform the necessary partitions.
@@ -35,7 +33,7 @@ Step 7: Make your software selection (I normally select "Minimal Install")
 
 Step 8: Setup your root and User Account
 
-### Update Operating System and install System Packages
+## Update Operating System and install System Packages
 
 ```bash
 sudo dnf -y update && \
@@ -62,7 +60,7 @@ sudo subscription-manager repos --enable ansible-2.9-for-rhel-8-x86_64-rpms
 dnf -y install ansible
 ```
 
-### Enable FIPS
+## Enable FIPS
 
 ```bash
 fips-mode-setup --enable
@@ -79,7 +77,7 @@ firewall-cmd --permanent --add-port=80/tcp
 firewall-cmd --reload
 ```
 
-### Add SELinux Rule
+## Add SELinux Rule
 
 SELinux may be preventing the reverse proxy connection. You may need to allow HTTP network connections with the command setsebool -P httpd_can_network_connect 1. For further information, view the SELinux troubleshooting guide.
 
