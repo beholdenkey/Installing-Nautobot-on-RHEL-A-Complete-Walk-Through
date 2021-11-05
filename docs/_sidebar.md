@@ -1,10 +1,10 @@
 - [Introduction](introduction.md)
 - Enterprise Nautobot Installation
   - [Overview](Enterprise-Nautobot-Installation/overview.md)
-  - [Part 1](Configure-RHEL-OS/configure-rhel-os.md)
+  - [Part 1](Enterprise-Nautobot-Installation/configure-rhel-os.md)
   - [Part 2](Enterprise-Nautobot-Installation/dependency_configuration.md)
   - [Part 3](Enterprise-Nautobot-Installation/install_nautobot.md)
-- Applying Security Implementation Guide
+- Applying STIG
   - [Overview](Applying-Security-Implementation-Guide/overview.md)
   - [Part 1](Applying-Security-Implementation-Guide/preparations.md)
   - [Part 2](Applying-Security-Implementation-Guide/Applying-STIG.md)
