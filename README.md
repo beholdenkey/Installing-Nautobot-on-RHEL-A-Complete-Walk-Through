@@ -27,6 +27,7 @@
       - [Configure Systemd for new Services](#configure-systemd-for-new-services)
     - [Configure HTTP Server](#configure-http-server)
   - [Closing Comments](#closing-comments)
+    - [Resources](#resources)
 
 ## Synopsis
 
@@ -637,3 +638,7 @@ You can now access the Nautobot login page via the IPv4 address you set for the 
 ## Closing Comments
 
 There are still many changes coming to this guide and a lot of things to be tested. I decided to redo my documentation because it was getting difficult for even myself to read and understand. Please feel free to submit an issue if you see something wrong or something that could be better.
+
+### Resources
+
+- [DISA STIG Document Library](https://public.cyber.mil/stigs/downloads/)
