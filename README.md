@@ -10,7 +10,6 @@
   - [Server Requirements](#server-requirements)
   - [Preparing Operating System](#preparing-operating-system)
     - [Update Operating System and install System Packages](#update-operating-system-and-install-system-packages)
-    - [Enable FIPS](#enable-fips)
     - [Configure Firewall](#configure-firewall)
     - [Add SELinux Rule](#add-selinux-rule)
     - [Configure PostgreSQL Database](#configure-postgresql-database)
@@ -114,14 +113,6 @@ sudo subscription-manager repos --enable ansible-2.9-for-rhel-8-x86_64-rpms
 ```bash
 dnf -y install ansible
 ```
-
-### Enable FIPS
-
-```bash
-fips-mode-setup --enable
-```
-
-Be sure to reboot after FIPS has been enabled. You will have to disable this again later
 
 ### Configure Firewall
 
