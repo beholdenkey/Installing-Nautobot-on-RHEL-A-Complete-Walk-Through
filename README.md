@@ -47,7 +47,7 @@ The following minimum versions are required for Nautobot to operate and the vers
 | Dependency | Role         | Minimum Version | Production Tested |
 | ---------- | ------------ | --------------- | ----------------- |
 | Python     | Application  | 3.6             | 3.9.7             |
-| PostgreSQL | Database     | 9.6             | 14.1              |
+| PostgreSQL | Database     | 9.6             | 13.2              |
 | Redis      | Cache, Queue | 4.0             | 6.1               |
 
 ## Server Requirements
