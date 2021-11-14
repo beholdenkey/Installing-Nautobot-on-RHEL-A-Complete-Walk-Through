@@ -1,61 +1,70 @@
 # Security Technical Implementation Guide
 
-The Security Technical Implementation Guide (STIG) for RHEL 8 will be implemented using the RHEL 8 STIG ansible playbook.
+The Security Technical Implementation Guide (STIG) for RHEL 8 will be implemented using the RHEL 8 STIG ansible-playbook.
 
-PLEASE READ:
+> PLEASE READ:
+>
+> - This guide will only go over how to apply the STIG on RHEL 8
+> - How long will it take to execute this playbook?
+>   - It will take 20-30 minutes to execute this playbook.
+> - What will this playbook not do?
+>   - This playbook will not partition the drives in the required manner. The engineer must do this in the initial build phase.
+>
+> Note: If there are any issues with this playbook please submit the issue to <https://github.com/RedHatGov/rhel8-stig-latest>.
 
-- How long will it take to execute this playbook?
-  - It will take 20-30 minutes to execute this playbook.
-- What will this playbook not do?
-  - This playbook will not partition the drives in the required manner. The engineer must do this in the initial build phase.
+## Required Resources
 
->Note: If there are any issues with this playbook please submit the issue to <https://github.com/RedHatGov/rhel8-stig-latest>.
+- [Red Hat STIG Role](<https://galaxy.ansible.com/redhatofficial/rhel8_stig>)
 
-Resources:
+- [Red Hat Compliance as Code RHEL 8 Playbook](<https://github.com/RedHatGov/rhel8-stig-latest>)
 
-<https://galaxy.ansible.com/redhatofficial/rhel8_stig>
+## Pre-Requisites
 
-<https://github.com/RedHatGov/rhel8-stig-latest>
-
-Step 1:
+If you have not done so already you will need to install ``git``.
 
 ```bash
-dnf -y update && \
-dnf -y install \
-python39 \
-python39-devel \
-python39-pip \
-git
+dnf -y install git
+```
+
+If you followed the Enterprise Nautobot Installation Guide, you should have already enabled the ansible content for your RHEL 8 server; however, if you have not, please perform the following commands.
+
+```bash
+sudo subscription-manager repos --enable ansible-2.9-for-rhel-8-x86_64-rpms
 ```
 
 ```bash
-mkdir /etc/ansible
+dnf -y install ansible
 ```
 
-```bash
-cd /etc/ansible
+## Configuring Ansible Host File
+
+Make the following changes to the ``hosts`` file in the  ``/ect/ansible`` dir. 
+
+```yaml
+# This is the default ansible 'hosts' file.
+#
+# It should live in /etc/ansible/hosts
+#
+#   - Comments begin with the '#' character
+#   - Blank lines are ignored
+#   - Groups of hosts are delimited by [header] elements
+#   - You can enter hostnames or ip addresses
+#   - A hostname/ip can be a member of multiple groups
+
+# Ex 1: Ungrouped hosts, specify before any group headers:
+[Ungrouped]
+127.0.0.1 ansible_connection=local
 ```
 
->Note: You will still need to add everything to the ansible.cfg the best way to do this is either to git clone this repo or if you are able then copy and paste
-from this repo. (It cannot be left blank)
+>This will allow you to execute the playbook locally.
 
-```bash
-touch ansible.cfg
-```
-
->Note: You will still need to add "127.0.0.1 ansible_connection=local" to the host file to run the playbook locally.
-
-```bash
-touch hosts
-```
-
-```bash
-pip3 install ansible
-```
+## Install Ansible role
 
 ```bash
 ansible-galaxy install redhatofficial.rhel8_stig
 ```
+
+## Download STIG Playbook
 
 ```bash
 mkdir /etc/ansible/playbooks
@@ -69,7 +78,10 @@ cd /etc/ansible/playbooks
 git clone https://github.com/RedHatGov/rhel8-stig-latest 
 ```
 
-Now that all of the staging and prerequisites have been taken care of and you have performed your checks we can not stop the services running the server. In the case of Nautobot we will be performing the following.
+**PLEASE READ:**
+If you wish to have a nautobot installation that you can upgrade and or make changes in the future, you will need to disable the FIPS Implementation portion of the STIG. This is because Nautobot relies on the python md5 hashlib, per [FIPS 140-2](https://csrc.nist.gov/csrc/media/projects/cryptographic-module-validation-program/documents/security-policies/140sp2355.pdf) md5 is not an approved algorithm. As of the time of writing this, there is no known workaround.
+
+Now that all of the staging and prerequisites have been taken care of and you have performed your checks, we can not stop the services running the server. In the case of Nautobot, we will be performing the following.
 
 ```bash
 systemctl disable redis postgresql nautobot nautobot-worker nginx
@@ -91,30 +103,4 @@ Now that they are restarted you will need to verify there status.
 
 ```bash
 systemctl is-active redis postgresql nautobot nautobot-worker nginx
-```
-
-After functionality of all services and dependencies has been confirmed you can then proceed to go attempt to access the Nautobot instance.
-
-Post Security Implementation Nautobot Management:
-
-As many of you know, implementing a STIG changes many aspects of how a system performs or, more appropriately, what it doesn't function. With that being said, even though we did the right thing and created a system account for nautobot, allowing us to use the nautobot-server, you may notice that after the stig is implemented, you can no longer use the nautobot-server commands.
-![Operation Not Permitted](https://github.com/beholdenkey/Installing-Nautobot-on-RHEL-A-Complete-Walk-Through/blob/main/Resources/Images/nautobot-server_operation_not_permitted.PNG)
-
-Solution:
-
->Note: As of right now, this is the best solution I have found that doesn't result in altering SELinux rules or the STIG.
-
-```bash
-# Account with administrator privileges
-su root
-```
-
-```bash
-source /opt/nautobot/bin/activate
-```
-
-Then perform the following to verify functionality
-
-```bash
-nautobot-server check
 ```
