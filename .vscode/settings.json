@@ -15,5 +15,11 @@
     "yamllint"
   ],
   "python.pythonPath": "C:\\Users\\TheUser\\AppData\\Local\\Microsoft\\WindowsApps\\python3.9.exe",
-  "python.formatting.provider": "black"
+  "python.formatting.provider": "black",
+  "markdownlint.config": {
+    "MD028": false,
+    "MD025": {
+      "front_matter_title": ""
+    }
+  }
 }
