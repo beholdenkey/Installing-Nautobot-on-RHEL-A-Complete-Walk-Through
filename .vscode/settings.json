@@ -14,12 +14,13 @@
     "wsgi",
     "yamllint"
   ],
-  "python.pythonPath": "C:\\Users\\TheUser\\AppData\\Local\\Microsoft\\WindowsApps\\python3.9.exe",
+  "python.pythonPath": "C:\\Python310\\python.exe",
   "python.formatting.provider": "black",
   "markdownlint.config": {
     "MD028": false,
     "MD025": {
       "front_matter_title": ""
     }
-  }
+  },
+  "python.linting.enabled": true
 }
