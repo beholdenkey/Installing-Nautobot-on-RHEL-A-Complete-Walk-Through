@@ -318,7 +318,7 @@ sudo -u nautobot python3 -m venv /opt/nautobot
 ```
 
 ```bash
-"export NAUTOBOT_ROOT=/opt/nautobot" | sudo tee -a ~nautobot/.bashrc
+echo "export NAUTOBOT_ROOT=/opt/nautobot" | sudo tee -a ~nautobot/.bashrc
 ```
 
  From here on out these, you must perform actions as the nautobot user because the nautobot user is directly tied to the venv.
