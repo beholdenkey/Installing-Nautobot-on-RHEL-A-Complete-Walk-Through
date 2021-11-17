@@ -324,7 +324,7 @@ echo "export NAUTOBOT_ROOT=/opt/nautobot" | sudo tee -a ~nautobot/.bashrc
  From here on out these, you must perform actions as the nautobot user because the nautobot user is directly tied to the venv.
 
 ```bash
-sudo -iu
+sudo -iu nautobot
 ```
 
 >Note: ``sudo -iu`` automatically places you in the home directory of the user.
