@@ -384,6 +384,10 @@ Install Local Requirements:
 pip3 install -r $NAUTOBOT_ROOT/local_requirements.txt
 ```
 
+```bash
+setfacl -m u:nautobot:rwx /opt/nautobot/local_requirements.txt
+```
+
 To add packages to you local_requirements.txt so that it can be installed and kept up to date:
 
 ```bash
@@ -580,8 +584,8 @@ server {
 
     server_name _;
 
-    ssl_certificate /etc/ssl/certs/nautobot.crt;
-    ssl_certificate_key /etc/ssl/private/nautobot.key;
+    ssl_certificate /etc/pki/tls/certs/nautobot.crt;
+    ssl_certificate_key /etc/pki/tls/private/nautobot.key;
 
     client_max_body_size 25m;
 
