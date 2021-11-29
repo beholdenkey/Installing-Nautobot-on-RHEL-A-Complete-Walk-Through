@@ -829,7 +829,7 @@ This command performs the following actions:
 Finally, with root permissions, restart the web and background services:
 
 ```bash
-sudo systemctl restart nautobot nautobot-worker nautobot-scheduler
+sudo systemctl restart nautobot nautobot-worker
 ```
 
 ## Closing Comments
