@@ -835,6 +835,12 @@ sudo systemctl restart nautobot nautobot-worker
 
 ## Disconnected Nautobot Upgrade
 
+These steps will be based on the assumption that you are one of those poor engineers who is stuck in the stone ages we will be directing this guide assuming that your are working in a completely disconnected environment and will have to transfer the python packages over to the server either on a disk or an external hard drive.
+
+Reference: <https://pip.pypa.io/en/stable/cli/pip_download/#usage>
+
+We will be using pip download to download the python packages for nautobot as well as the required dependency upgrades needed to perform a successful upgrade. In addition you may need to do this for whatever plugins you utilize in your environment.
+
 ## Closing Comments
 
 There are still many changes coming to this guide and a lot of things to be tested. I decided to redo my documentation because it was getting difficult for even myself to read and understand. Please feel free to submit an issue if you see something wrong or something that could be better.
