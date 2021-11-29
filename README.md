@@ -683,7 +683,7 @@ dnf -y install ansible
 
 ## Configuring Ansible Host File
 
-Make the following changes to the ``hosts`` file in the  ``/ect/ansible`` dir. 
+Make the following changes to the ``hosts`` file in the  ``/ect/ansible`` dir.
 
 ```yaml
 # This is the default ansible 'hosts' file.
@@ -751,6 +751,8 @@ systemctl is-active redis postgresql nautobot nautobot-worker nginx
 ```
 
 ## Upgrading Disconnected Nautobot Server
+
+The process of upgrading Nautobot is relatively simple unless you are operating your server in an air-gapped environment where certain luxuries such as a Pulp3 Content Server are not present. This leads to some unique steps that must be taken to upgrade the nautobot server with the least amount of headaches possible. I will be covering both the Normal upgrade process as well as the disconnected process. That way you can compare the two different processes.
 
 ## Closing Comments
 
