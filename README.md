@@ -34,10 +34,11 @@
   - [Upgrading a Disconnected Nautobot Server](#upgrading-a-disconnected-nautobot-server)
     - [Normal Nautobot Upgrade](#normal-nautobot-upgrade)
     - [Update Prerequisites to Required Versions](#update-prerequisites-to-required-versions)
-  - [Install the Latest Release](#install-the-latest-release)
-  - [Upgrade your Optional Dependencies](#upgrade-your-optional-dependencies)
-  - [Run the Post Upgrade Operations](#run-the-post-upgrade-operations)
-  - [Restart the Nautobot Services](#restart-the-nautobot-services)
+    - [Install the Latest Release](#install-the-latest-release)
+    - [Upgrade your Optional Dependencies](#upgrade-your-optional-dependencies)
+    - [Run the Post Upgrade Operations](#run-the-post-upgrade-operations)
+    - [Restart the Nautobot Services](#restart-the-nautobot-services)
+  - [Disconnected Nautobot Upgrade](#disconnected-nautobot-upgrade)
   - [Closing Comments](#closing-comments)
     - [Resources](#resources)
 
@@ -781,7 +782,7 @@ Nautobot v1.0.0 and later requires the following:
 | PostgreSQL | 9.6             |
 | Redis      | 4.0             |
 
-## Install the Latest Release
+### Install the Latest Release
 
 As with the initial installation, you can upgrade Nautobot by installing the Python package directly from the Python Package Index (PyPI).
 
@@ -794,7 +795,7 @@ Upgrade Nautobot using `pip3`:
 pip3 install --upgrade nautobot
 ```
 
-## Upgrade your Optional Dependencies
+### Upgrade your Optional Dependencies
 
 If you do not have any optional dependencies, you may skip this step.
 
@@ -807,7 +808,7 @@ Then, upgrade your dependencies using `pip3`:
 pip3 install --upgrade -r $NAUTOBOT_ROOT/local_requirements.txt
 ```
 
-## Run the Post Upgrade Operations
+### Run the Post Upgrade Operations
 
 Finally, run Nautobot's `post_upgrade` management command:
 
@@ -824,13 +825,15 @@ This command performs the following actions:
 - Deletes all expired user sessions from the database
 - Clears all cached data to prevent conflicts with the new release
 
-## Restart the Nautobot Services
+### Restart the Nautobot Services
 
 Finally, with root permissions, restart the web and background services:
 
 ```bash
 sudo systemctl restart nautobot nautobot-worker
 ```
+
+## Disconnected Nautobot Upgrade
 
 ## Closing Comments
 
