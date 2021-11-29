@@ -31,6 +31,7 @@
   - [Configuring Ansible Host File](#configuring-ansible-host-file)
   - [Install Ansible role](#install-ansible-role)
   - [Download STIG Playbook](#download-stig-playbook)
+  - [Upgrading Disconnected Nautobot Server](#upgrading-disconnected-nautobot-server)
   - [Closing Comments](#closing-comments)
     - [Resources](#resources)
 
@@ -748,6 +749,8 @@ Now that they are restarted you will need to verify there status.
 ```bash
 systemctl is-active redis postgresql nautobot nautobot-worker nginx
 ```
+
+## Upgrading Disconnected Nautobot Server
 
 ## Closing Comments
 
