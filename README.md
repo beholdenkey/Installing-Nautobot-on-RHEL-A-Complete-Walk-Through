@@ -33,8 +33,7 @@
   - [Download STIG Playbook](#download-stig-playbook)
   - [Upgrading a Disconnected Nautobot Server](#upgrading-a-disconnected-nautobot-server)
     - [Normal Nautobot Upgrade](#normal-nautobot-upgrade)
-      - [Review the Release Notes](#review-the-release-notes)
-  - [Update Prerequisites to Required Versions](#update-prerequisites-to-required-versions)
+    - [Update Prerequisites to Required Versions](#update-prerequisites-to-required-versions)
   - [Install the Latest Release](#install-the-latest-release)
   - [Upgrade your Optional Dependencies](#upgrade-your-optional-dependencies)
   - [Run the Post Upgrade Operations](#run-the-post-upgrade-operations)
@@ -765,14 +764,14 @@ The process of upgrading Nautobot is relatively simple unless you are operating 
 
 source: [Upgrading to a New Nautobot Release](https://nautobot.readthedocs.io/en/stable/installation/upgrading/)
 
-#### Review the Release Notes
+Review the Release Notes
 
 Prior to upgrading your Nautobot instance, be sure to carefully review all [release notes](../../release-notes/) that
 have been published since your current version was released. Although the upgrade process typically does not involve
 additional work, certain releases may introduce breaking or backward-incompatible changes. These are called out in the
 release notes under the release in which the change went into effect.
 
-## Update Prerequisites to Required Versions
+### Update Prerequisites to Required Versions
 
 Nautobot v1.0.0 and later requires the following:
 
