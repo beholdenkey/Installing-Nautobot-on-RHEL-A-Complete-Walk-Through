@@ -120,7 +120,6 @@ sudo dnf -y update && \
     redis \
     nginx \
     openldap-devel \
-    redis \
     nano
 ```
 
