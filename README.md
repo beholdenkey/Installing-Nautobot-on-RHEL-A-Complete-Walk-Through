@@ -120,7 +120,8 @@ sudo dnf -y update && \
     redis \
     nginx \
     openldap-devel \
-    nano \
+    redis \
+    nano
 ```
 
 >Note: nano is optional however I like to have it because not everyone is a vim master.
