@@ -56,13 +56,14 @@ I have tested this build process on the following Operating Systems:
 
 ### Mandatory dependencies
 
-The following minimum versions are required for Nautobot to operate and the versions I have tested in production environments. I will not be using MySQL, so I will not be trying or going over that.
+The following minimum versions are required for Nautobot to operate and the versions I have tested in production environments.
 
 | Dependency | Role         | Minimum Version | Production Tested |
 | ---------- | ------------ | --------------- | ----------------- |
-| Python     | Application  | 3.6             | 3.9.7             |
+| Python     | Application  | 3.7             | 3.9.7             |
 | PostgreSQL | Database     | 9.6             | 13.2              |
 | Redis      | Cache, Queue | 4.0             | 6.1               |
+| MySQL      | Database     | 8.0             |                   |
 
 ## Server Requirements
 
@@ -146,7 +147,7 @@ firewall-cmd --reload
 
 ### Add SELinux Rule
 
-SELinux may be preventing the reverse proxy connection. You may need to allow HTTP network connections with the command setsebool -P httpd_can_network_connect 1. For further information, view the SELinux troubleshooting guide.
+SELinux may be preventing the reverse proxy connection. You may need to allow HTTP network connections with the command ``setsebool -P httpd_can_network_connect 1``. For further information, view the SELinux troubleshooting guide.
 
 ```bash
 setsebool -P httpd_can_network_connect 1
@@ -848,4 +849,3 @@ There are still many changes coming to this guide and a lot of things to be test
 ### Resources
 
 - [DISA STIG Document Library](https://public.cyber.mil/stigs/downloads/)
-- [Docisfy](https://docsify.js.org)
