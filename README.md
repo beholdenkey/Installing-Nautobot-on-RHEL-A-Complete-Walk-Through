@@ -44,7 +44,7 @@
 
 ## Synopsis
 
-This guide assists users in installing Nautobot on Red Hat Enterprise Linux. Although this installation guide focused on supporting organizations that require an increased standard of security, it can easily be forked and modified to support the needs of others. I will go through the process of installation, hardening, and STIG implementation. In addition, I will be using the ansible-playbook for the RHEL 8 STIG implementation. Please refer to the resources directory for the links to these repositories. Also, if you are not familiar with the dependencies of Nautobot, I highly recommend that you do some reading because nautobot consists of a rather diverse Application Stack.
+This guide assists users in installing Nautobot on Red Hat Enterprise Linux. Although this installation guide focuses on supporting organizations that require an increased standard of security, it can easily be forked and modified to support the needs of others. I will go through the installation, hardening, and STIG implementation. In addition, I will be using the ansible-playbook for the RHEL 8 STIG implementation. Please refer to the resources directory for the links to these repositories. Also, if you are not familiar with the dependencies of Nautobot, I highly recommend that you do some reading because nautobot consists of a rather diverse Application Stack.
 
 ## Dependencies
 
