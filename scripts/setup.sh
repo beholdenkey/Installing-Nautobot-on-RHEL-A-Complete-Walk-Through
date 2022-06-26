@@ -181,7 +181,7 @@ check_pghba() {
     fi
 }
 
-configure_postgresql() {
+configure_postgresql_db() {
     if [ "$OS" = "Red Hat Enterprise Linux" ]; then
         if [ "$VER" = "8.0" ]; then
             sudo systemctl start postgresql-14
@@ -223,6 +223,9 @@ main() {
     selinux_rules
     install_dependencies
     install_postgresql
+    configure_postgres_conf
+    check_pghba
+    configure_postgresql_db
 }
 
 main
