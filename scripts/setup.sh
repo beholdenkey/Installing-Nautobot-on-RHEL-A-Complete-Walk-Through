@@ -106,15 +106,15 @@ install_postgresql() {
         if [ "$VER" = "8.0" ]; then
             #sudo dnf install -y https://download.postgresql.org/pub/repos/yum/reporpms/EL-8-x86_64/pgdg-redhat-repo-latest.noarch.rpm
             #sudo dnf install -y postgresql14-server
-            dnf -y module install postgresql:14/server
-            postgresql-setup --initdb
+            dnf -y install postgresql
             sudo systemctl enable --now postgresql
+            postgresql-setup --initdb
         elif [ "$VER" = "9.0" ]; then
             #sudo dnf install -y https://download.postgresql.org/pub/repos/yum/reporpms/EL-9-x86_64/pgdg-redhat-repo-latest.noarch.rpm
             #sudo dnf install -y postgresql14-server
-            dnf -y module install postgresql:14/server
-            postgresql-setup --initdb
+            dnf -y install postgresql
             sudo systemctl enable --now postgresql
+            postgresql-setup --initdb
         else
             echo "Unsupported OS Version: $VER"
         fi
@@ -122,8 +122,8 @@ install_postgresql() {
         if [ "$VER" = "36.0" ]; then
             dnf install -y https://download.postgresql.org/pub/repos/yum/reporpms/F-36-x86_64/pgdg-fedora-repo-latest.noarch.rpm
             dnf install -y postgresql14-server
-            postgresql-setup --initdb
             sudo systemctl enable --now postgresql
+            postgresql-setup --initdb
         else
             echo "Unsupported OS Version: $VER"
         fi
