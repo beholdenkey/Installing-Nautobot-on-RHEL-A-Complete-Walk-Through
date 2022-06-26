@@ -130,3 +130,17 @@ install_postgresql() {
         echo "Unsupported OS: $OS"
     fi
 }
+
+main() {
+    detect_os
+    disable_kdump
+    update_os
+    verify_system
+    firewall_setup
+    firewall_rules
+    selinux_rules
+    install_dependencies
+    install_postgresql
+}
+
+main
