@@ -27,7 +27,7 @@ disable_kdump() {
 }
 
 update_os() {
-    if [ "$OS" = "RedHat" ]; then
+    if [ "$OS" = "Red Hat Enterprise Linux" ]; then
         sudo dnf update -y
     elif [ "$OS" = "Fedora" ]; then
         sudo dnf update -y
@@ -45,7 +45,7 @@ verify_system() {
 }
 
 firewall_setup() {
-    if [ "$OS" = "RedHat" ]; then
+    if [ "$OS" = "Red Hat Enterprise Linux" ]; then
         sudo systemctl enable firewalld
         sudo systemctl start firewalld
     elif [ "$OS" = "Fedora" ]; then
@@ -57,7 +57,7 @@ firewall_setup() {
 }
 
 firewall_rules() {
-    if [ "$OS" = "RedHat" ]; then
+    if [ "$OS" = "Red Hat Enterprise Linux" ]; then
         sudo firewall-cmd --permanent --add-port=80/tcp
         sudo firewall-cmd --permanent --add-port=443/tcp
         firewall-cmd --reload
@@ -71,7 +71,7 @@ firewall_rules() {
 }
 
 selinux_rules() {
-    if [ "$OS" = "RedHat" ]; then
+    if [ "$OS" = "Red Hat Enterprise Linux" ]; then
         setsebool -P httpd_can_network_connect 1
     elif [ "$OS" = "Fedora" ]; then
         setsebool -P httpd_can_network_connect 1
@@ -81,17 +81,17 @@ selinux_rules() {
 }
 
 install_dependencies() {
-    if [ "$OS" = "RedHat" ]; then
-        if [ "$VER" = "8" ]; then
+    if [ "$OS" = "Red Hat Enterprise Linux" ]; then
+        if [ "$VER" = "8.0" ]; then
             sudo subscription-manager repos --enable ansible-2.9-rhel-8-x86_64
-            sudo dnf install -y python39 python39-pip python39-devel git redis nginx openldap-devel ansible
-        elif [ "$VER" = "9" ]; then
-            sudo dnf install -y python39 python39-pip python39-devel git redis nginx openldap-devel ansible-core
+            sudo dnf install -y python3 python3-pip python3-devel git redis nginx openldap-devel ansible
+        elif [ "$VER" = "9.0" ]; then
+            sudo dnf install -y python3 python3-pip python3-devel git redis nginx openldap-devel ansible-core
         else
             echo "Unsupported OS Version: $VER"
         fi
     elif [ "$OS" = "Fedora" ]; then
-        if [ "$VER" = "36" ]; then
+        if [ "$VER" = "36.0" ]; then
             sudo dnf install -y python3 python3-pip python3-devel git redis nginx openldap-devel ansible-core
         else
             echo "Unsupported OS Version: $VER"
@@ -102,27 +102,57 @@ install_dependencies() {
 }
 
 install_postgresql() {
-    if [ "$OS" = "RedHat" ]; then
-        if [ "$VER" = "8" ]; then
+    if [ "$OS" = "Red Hat Enterprise Linux" ]; then
+        if [ "$VER" = "8.0" ]; then
             sudo dnf install -y https://download.postgresql.org/pub/repos/yum/reporpms/EL-8-x86_64/pgdg-redhat-repo-latest.noarch.rpm
-            sudo dnf -qy module disable postgresql
             sudo dnf install -y postgresql14-server
             sudo /usr/pgsql-14/bin/postgresql-14-setup initdb
             sudo systemctl enable --now postgresql-14
-        elif [ "$VER" = "9" ]; then
+        elif [ "$VER" = "9.0" ]; then
             sudo dnf install -y https://download.postgresql.org/pub/repos/yum/reporpms/EL-9-x86_64/pgdg-redhat-repo-latest.noarch.rpm
-            sudo dnf -qy module disable postgresql
             sudo /usr/pgsql-14/bin/postgresql-14-setup initdb
             sudo systemctl enable --now postgresql-14
         else
             echo "Unsupported OS Version: $VER"
         fi
     elif [ "$OS" = "Fedora" ]; then
-        if [ "$VER" = "36" ]; then
+        if [ "$VER" = "36.0" ]; then
             dnf install -y https://download.postgresql.org/pub/repos/yum/reporpms/F-36-x86_64/pgdg-fedora-repo-latest.noarch.rpm
             dnf install -y postgresql14-server
             sudo /usr/pgsql-14/bin/postgresql-14-setup initdb
             sudo systemctl enable --now postgresql-14
+        else
+            echo "Unsupported OS Version: $VER"
+        fi
+    else
+        echo "Unsupported OS: $OS"
+    fi
+}
+
+configure_postgresql() {
+    if [ "$OS" = "Red Hat Enterprise Linux" ]; then
+        if [ "$VER" = "8.0" ]; then
+            sudo systemctl start postgresql-14
+            sudo systemctl enable postgresql-14
+            sudo -u postgres psql -c "CREATE USER nautobot WITH PASSWORD 'P@ssw0rd12';"
+            sudo -u postgres psql -c "CREATE DATABASE nautobot;"
+            sudo -u postgres psql -c "GRANT ALL PRIVILEGES ON DATABASE nautobot TO nautobot;"
+        elif [ "$VER" = "9.0" ]; then
+            sudo systemctl start postgresql-14
+            sudo systemctl enable postgresql-14
+            sudo -u postgres psql -c "CREATE USER nautobot WITH PASSWORD 'P@ssw0rd12';"
+            sudo -u postgres psql -c "CREATE DATABASE nautobot;"
+            sudo -u postgres psql -c "GRANT ALL PRIVILEGES ON DATABASE nautobot TO nautobot;"
+        else
+            echo "Unsupported OS Version: $VER"
+        fi
+    elif [ "$OS" = "Fedora" ]; then
+        if [ "$VER" = "36.0" ]; then
+            sudo systemctl start postgresql-14
+            sudo systemctl enable postgresql-14
+            sudo -u postgres psql -c "CREATE USER nautobot WITH PASSWORD 'P@ssw0rd12';"
+            sudo -u postgres psql -c "CREATE DATABASE nautobot;"
+            sudo -u postgres psql -c "GRANT ALL PRIVILEGES ON DATABASE nautobot TO nautobot;"
         else
             echo "Unsupported OS Version: $VER"
         fi
