@@ -129,6 +129,32 @@ install_postgresql() {
     fi
 }
 
+configure_postgres_conf() {
+    if [ "$OS" = "Red Hat Enterprise Linux" ]; then
+        if [ "$VER" = "8.0" ]; then
+            sudo cp /etc/postgresql/14/main/postgresql.conf /etc/postgresql/14/main/postgresql.conf.bak
+            sudo sed -i 's/#password_encryption = on/password_encryption = scram-sha-256/g' /etc/postgresql/14/main/postgresql.conf
+        elif [ "$VER" = "9.0" ]; then
+            sudo cp /etc/postgresql/14/main/postgresql.conf /etc/postgresql/14/main/postgresql.conf.bak
+            sudo sed -i 's/#password_encryption = on/password_encryption = scram-sha-256/g' /etc/postgresql/14/main/postgresql.conf
+            sudo systemctl restart postgresql-14
+        else
+            echo "Unsupported OS Version: $VER"
+        fi
+    elif [ "$OS" = "Fedora" ]; then
+        if [ "$VER" = "36.0" ]; then
+            sudo cp /etc/postgresql/14/main/postgresql.conf /etc/postgresql/14/main/postgresql.conf.bak
+            sudo sed -i 's/#password_encryption = on/password_encryption = scram-sha-256/g' /etc/postgresql/14/main/postgresql.conf
+            sudo systemctl restart postgresql-14
+        else
+            echo "Unsupported OS Version: $VER"
+        fi
+    else
+        echo "Unsupported OS: $OS"
+    fi
+
+}
+
 configure_postgresql() {
     if [ "$OS" = "Red Hat Enterprise Linux" ]; then
         if [ "$VER" = "8.0" ]; then
