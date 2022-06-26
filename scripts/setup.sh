@@ -155,6 +155,32 @@ configure_postgres_conf() {
 
 }
 
+check_pghba() {
+    if [ "$OS" = "Red Hat Enterprise Linux" ]; then
+        if [ "$VER" = "8.0" ]; then
+            sudo cp /etc/postgresql/14/main/pg_hba.conf /etc/postgresql/14/main/pg_hba.conf.bak
+            sudo sed -i 's/local   all             all                                     peer/local   all             all                                     scram-256/g' /etc/postgresql/14/main/pg_hba.conf
+            sudo sed -i 's/host    all             all                                                                                                          scram-256/g' /ect/postgresql/14/main/pg_hba/conf
+        elif [ "$VER" = "9.0" ]; then
+            sudo cp /etc/postgresql/14/main/pg_hba.conf /etc/postgresql/14/main/pg_hba.conf.bak
+            sudo sed -i 's/local   all             all                                     peer/local   all             all                                     scram-256/g' /etc/postgresql/14/main/pg_hba.conf
+            sudo sed -i 's/host    all             all                                                                                                          scram-256/g' /ect/postgresql/14/main/pg_hba/conf
+            sudo systemctl restart postgresql-14
+        else
+            echo "Unsupported OS Version: $VER"
+        fi
+    elif [ "$OS" = "Fedora" ]; then
+        if [ "$VER" = "36.0" ]; then
+            sudo cp /etc/postgresql/14/main/pg_hba.conf /etc/postgresql/14/main/pg_hba.conf.bak
+            sudo sed -i 's/local   all             all                                     peer/local   all             all                                     scram-256/g' /etc/postgresql/14/main/pg_hba.conf
+            sudo sed -i 's/host    all             all                                                                                                          scram-256/g' /ect/postgresql/14/main/pg_hba/conf
+            sudo systemctl restart postgresql-14
+        fi
+    else
+        echo "Unsupported OS: $OS"
+    fi
+}
+
 configure_postgresql() {
     if [ "$OS" = "Red Hat Enterprise Linux" ]; then
         if [ "$VER" = "8.0" ]; then
