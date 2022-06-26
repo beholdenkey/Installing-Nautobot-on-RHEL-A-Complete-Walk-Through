@@ -52,9 +52,9 @@ This guide assists users in installing Nautobot on Red Hat Enterprise Linux. Alt
 
 I have tested this build process on the following Operating Systems:
 
-| Operating Systems        | Version                 |
-| ------------------------ | ----------------------- |
-| Red Hat Enterprise Linux | 8.1, 8.2, 8.3, 8.4, 8.5 |
+| Operating Systems        | Version                    |
+| ------------------------ | -------------------------- |
+| Red Hat Enterprise Linux | 8.1, 8.2, 8.3, 8.4, 8.5, 9 |
 
 ### Mandatory dependencies
 
@@ -63,7 +63,7 @@ The following minimum versions are required for Nautobot to operate and the vers
 | Dependency | Role         | Minimum Version | Production Tested |
 | ---------- | ------------ | --------------- | ----------------- |
 | Python     | Application  | 3.7             | 3.9.7             |
-| PostgreSQL | Database     | 9.6             | 13.2              |
+| PostgreSQL | Database     | 9.6             | 13.7              |
 | Redis      | Cache, Queue | 4.0             | 6.1               |
 | MySQL      | Database     | 8.0             |                   |
 
