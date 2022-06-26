@@ -135,19 +135,19 @@ install_postgresql() {
 configure_postgres_conf() {
     if [ "$OS" = "Red Hat Enterprise Linux" ]; then
         if [ "$VER" = "8.0" ]; then
-            sudo cp /etc/postgresql/14/main/postgresql.conf /etc/postgresql/14/main/postgresql.conf.bak
-            sudo sed -i 's/#password_encryption = on/password_encryption = scram-sha-256/g' /etc/postgresql/14/main/postgresql.conf
+            sudo cp /var/lib/pgsql/data/pg_hba.conf /var/lib/pgsql/data/pg_hba.conf.bak
+            sudo sed -i 's/#password_encryption = on/password_encryption = scram-sha-256/g' /var/lib/pgsql/data/pg_hba.conf
         elif [ "$VER" = "9.0" ]; then
-            sudo cp /etc/postgresql/14/main/postgresql.conf /etc/postgresql/14/main/postgresql.conf.bak
-            sudo sed -i 's/#password_encryption = on/password_encryption = scram-sha-256/g' /etc/postgresql/14/main/postgresql.conf
+            sudo cp /var/lib/pgsql/data/pg_hba.conf /var/lib/pgsql/data/pg_hba.conf.bak
+            sudo sed -i 's/#password_encryption = on/password_encryption = scram-sha-256/g' /var/lib/pgsql/data/pg_hba.conf
             sudo systemctl restart postgresql
         else
             echo "Unsupported OS Version: $VER"
         fi
     elif [ "$OS" = "Fedora" ]; then
         if [ "$VER" = "36.0" ]; then
-            sudo cp /etc/postgresql/14/main/postgresql.conf /etc/postgresql/14/main/postgresql.conf.bak
-            sudo sed -i 's/#password_encryption = on/password_encryption = scram-sha-256/g' /etc/postgresql/14/main/postgresql.conf
+            sudo cp /var/lib/pgsql/data/pg_hba.conf /var/lib/pgsql/data/pg_hba.conf.bak
+            sudo sed -i 's/#password_encryption = on/password_encryption = scram-sha-256/g' /var/lib/pgsql/data/pg_hba.conf
             sudo systemctl restart postgresql
         else
             echo "Unsupported OS Version: $VER"
@@ -161,12 +161,12 @@ configure_postgres_conf() {
 check_pghba() {
     if [ "$OS" = "Red Hat Enterprise Linux" ]; then
         if [ "$VER" = "8.0" ]; then
-            sudo cp /etc/postgresql/14/main/pg_hba.conf /etc/postgresql/14/main/pg_hba.conf.bak
-            sudo sed -i 's/local   all             all                                     peer/local   all             all                                     scram-256/g' /etc/postgresql/14/main/pg_hba.conf
+            sudo cp var/lib/pgsql/data/pg_hba.conf var/lib/pgsql/data/pg_hba.conf.bak
+            sudo sed -i 's/local   all             all                                     peer/local   all             all                                     scram-256/g' var/lib/pgsql/data/pg_hba.conf
             sudo sed -i 's/host    all             all                                                                                                          scram-256/g' /ect/postgresql/14/main/pg_hba/conf
         elif [ "$VER" = "9.0" ]; then
-            sudo cp /etc/postgresql/14/main/pg_hba.conf /etc/postgresql/14/main/pg_hba.conf.bak
-            sudo sed -i 's/local   all             all                                     peer/local   all             all                                     scram-256/g' /etc/postgresql/14/main/pg_hba.conf
+            sudo cp var/lib/pgsql/data/pg_hba.conf var/lib/pgsql/data/pg_hba.conf.bak
+            sudo sed -i 's/local   all             all                                     peer/local   all             all                                     scram-256/g' var/lib/pgsql/data/pg_hba.conf
             sudo sed -i 's/host    all             all                                                                                                          scram-256/g' /ect/postgresql/14/main/pg_hba/conf
             sudo systemctl restart postgresql
         else
@@ -174,8 +174,8 @@ check_pghba() {
         fi
     elif [ "$OS" = "Fedora" ]; then
         if [ "$VER" = "36.0" ]; then
-            sudo cp /etc/postgresql/14/main/pg_hba.conf /etc/postgresql/14/main/pg_hba.conf.bak
-            sudo sed -i 's/local   all             all                                     peer/local   all             all                                     scram-256/g' /etc/postgresql/14/main/pg_hba.conf
+            sudo cp var/lib/pgsql/data/pg_hba.conf var/lib/pgsql/data/pg_hba.conf.bak
+            sudo sed -i 's/local   all             all                                     peer/local   all             all                                     scram-256/g' var/lib/pgsql/data/pg_hba.conf
             sudo sed -i 's/host    all             all                                                                                                          scram-256/g' /ect/postgresql/14/main/pg_hba/conf
             sudo systemctl restart postgresql
         fi
