@@ -10,21 +10,21 @@ NAUTOBOT_USER=nautobot
 cd "$(dirname "$0")"
 
 STATIC_DIRS=(
-    "jobs"
-    "git"
-    "media/image-attachments"
-    "media/devicetype-images"
+  "jobs"
+  "git"
+  "media/image-attachments"
+  "media/devicetype-images"
 )
 
 echo "Verifying static file directories..."
 for d in "${STATIC_DIRS[@]}"; do
-    STATIC_DIR="$(pwd -P)/$d"
-    # echo $STATIC_DIR
-    if [ ! -d "${STATIC_DIR}" ]; then
-        echo "  Creating ${STATIC_DIR}..."
-        mkdir -p $STATIC_DIR
-        chown -R $NAUTOBOT_USER $STATIC_DIR
-    fi
+  STATIC_DIR="$(pwd -P)/$d"
+  # echo $STATIC_DIR
+  if [ ! -d "${STATIC_DIR}" ]; then
+    echo "  Creating ${STATIC_DIR}..."
+    mkdir -p $STATIC_DIR
+    chown -R $NAUTOBOT_USER $STATIC_DIR
+  fi
 done
 
 # Prep path to virtual environment
