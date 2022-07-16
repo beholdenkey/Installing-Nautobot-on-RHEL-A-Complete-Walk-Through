@@ -2,51 +2,17 @@
 
 > Note: This project is currently under active development and is being overhauled.
 
-## Table of Contents
+## Overview
 
-- [Installing Nautobot on Red Hat Enterprise Linux: A Complete Walk Through](#installing-nautobot-on-red-hat-enterprise-linux-a-complete-walk-through)
-  - [Table of Contents](#table-of-contents)
-  - [Synopsis](#synopsis)
-  - [Dependencies](#dependencies)
-    - [Mandatory dependencies](#mandatory-dependencies)
-  - [Server Requirements](#server-requirements)
-  - [Preparing Operating System](#preparing-operating-system)
-    - [Update Operating System and install System Packages](#update-operating-system-and-install-system-packages)
-    - [Configure Firewall](#configure-firewall)
-    - [Add SELinux Rule](#add-selinux-rule)
-    - [Configure PostgreSQL Database](#configure-postgresql-database)
-      - [Start PostgreSQL](#start-postgresql)
-      - [Create a Database](#create-a-database)
-      - [Verify PostgreSQL Service Availability](#verify-postgresql-service-availability)
-  - [Setup Redis](#setup-redis)
-    - [Install and Configure Nautobot](#install-and-configure-nautobot)
-    - [Configure Nautobot Account and Environment](#configure-nautobot-account-and-environment)
-    - [Install Nautobot](#install-nautobot)
-  - [Deploying Nautobot Web Service and Workers](#deploying-nautobot-web-service-and-workers)
-    - [Nautobot Service](#nautobot-service)
-    - [Nautobot Worker Service](#nautobot-worker-service)
-      - [Configure Systemd for new Services](#configure-systemd-for-new-services)
-    - [Configure HTTP Server](#configure-http-server)
-  - [Applying DISA Security Technical Implementation Guide to Nautobot](#applying-disa-security-technical-implementation-guide-to-nautobot)
-  - [Required Resources](#required-resources)
-  - [Pre-Requisites](#pre-requisites)
-  - [Configuring Ansible Host File](#configuring-ansible-host-file)
-  - [Install Ansible role](#install-ansible-role)
-  - [Download STIG Playbook](#download-stig-playbook)
-  - [Upgrading a Disconnected Nautobot Server](#upgrading-a-disconnected-nautobot-server)
-    - [Normal Nautobot Upgrade](#normal-nautobot-upgrade)
-    - [Update Prerequisites to Required Versions](#update-prerequisites-to-required-versions)
-    - [Install the Latest Release](#install-the-latest-release)
-    - [Upgrade your Optional Dependencies](#upgrade-your-optional-dependencies)
-    - [Run the Post Upgrade Operations](#run-the-post-upgrade-operations)
-    - [Restart the Nautobot Services](#restart-the-nautobot-services)
-  - [Disconnected Nautobot Upgrade](#disconnected-nautobot-upgrade)
-  - [Closing Comments](#closing-comments)
-    - [Resources](#resources)
+This guide assists engineers in installing a Production Nautobot instance on Red Hat Enterprise Linux. The process of installing Nautobot is simple; however, installing and configuring a production Nautobot instance ready for production workloads can get complicated depending on organizational requirements. In some cases, such as organizations that exist within sovereign, also known as Air-Gapped environments, this process can be incredibly complex, not just the deployment of the service but also the maintenance of the service.
 
-## Synopsis
+## Supported Configurations
 
-This guide assists users in installing Nautobot on Red Hat Enterprise Linux. Although this installation guide focuses on supporting organizations that require an increased standard of security, it can easily be forked and modified to support the needs of others. I will go through the installation, hardening, and STIG implementation. In addition, I will be using the ansible-playbook for the RHEL 8 STIG implementation. Please refer to the resources directory for the links to these repositories. Also, if you are not familiar with the dependencies of Nautobot, I highly recommend that you do some reading because nautobot consists of a rather diverse Application Stack.
+| Configuration                       | Description                                                                                                                                                                                                  |
+| ----------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| Public: Red Hat Enterprise Linux    | This configuration will be used when deploying and maintaining Nautobot on Red Hat Enterprise Linux in a Public Environment.                                                                                 |
+| Sovereign: Red Hat Enterprise Linux | This configuration will be used when deploying and maintaining Nautobot on Red Hat Enterprise Linux in a sovereign environment.                                                                              |
+| Public Edge                         | This configuration will be used when deploying and maintaining Nautobot on edge devices that can reach back to public repository mirrors for updates—focusing on deployment to single board computers (SBC). |
 
 ## Dependencies
 
